@@ -19,27 +19,23 @@ SET row_security = off;
 
 --
 -- TOC entry 9 (class 2615 OID 398963)
--- Name: attacksimulator; Type: SCHEMA; Schema: -; Owner: towerstreet
+-- Name: attacksimulator; Type: SCHEMA; Schema: -
 --
 
 CREATE SCHEMA attacksimulator;
 
 
-ALTER SCHEMA attacksimulator OWNER TO towerstreet;
-
 --
 -- TOC entry 5 (class 2615 OID 400342)
--- Name: scoring; Type: SCHEMA; Schema: -; Owner: towerstreet
+-- Name: scoring; Type: SCHEMA; Schema: -
 --
 
 CREATE SCHEMA scoring;
 
 
-ALTER SCHEMA scoring OWNER TO towerstreet;
-
 --
 -- TOC entry 751 (class 1247 OID 400957)
--- Name: simulation_config_description; Type: TYPE; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_config_description; Type: TYPE; Schema: attacksimulator
 --
 
 CREATE TYPE attacksimulator.simulation_config_description AS (
@@ -49,11 +45,9 @@ CREATE TYPE attacksimulator.simulation_config_description AS (
 );
 
 
-ALTER TYPE attacksimulator.simulation_config_description OWNER TO towerstreet;
-
 --
 -- TOC entry 754 (class 1247 OID 400961)
--- Name: simulation_scoring_config_description; Type: TYPE; Schema: scoring; Owner: towerstreet
+-- Name: simulation_scoring_config_description; Type: TYPE; Schema: scoring
 --
 
 CREATE TYPE scoring.simulation_scoring_config_description AS (
@@ -62,11 +56,9 @@ CREATE TYPE scoring.simulation_scoring_config_description AS (
 );
 
 
-ALTER TYPE scoring.simulation_scoring_config_description OWNER TO towerstreet;
-
 --
 -- TOC entry 273 (class 1255 OID 400958)
--- Name: add_simulation_config(character varying[], attacksimulator.simulation_config_description[]); Type: FUNCTION; Schema: attacksimulator; Owner: towerstreet
+-- Name: add_simulation_config(character varying[], attacksimulator.simulation_config_description[]); Type: FUNCTION; Schema: attacksimulator
 --
 
 CREATE FUNCTION attacksimulator.add_simulation_config(assessment_keys character varying[], tasks_description attacksimulator.simulation_config_description[]) RETURNS void
@@ -97,11 +89,9 @@ END;
 $$;
 
 
-ALTER FUNCTION attacksimulator.add_simulation_config(assessment_keys character varying[], tasks_description attacksimulator.simulation_config_description[]) OWNER TO towerstreet;
-
 --
 -- TOC entry 259 (class 1255 OID 400953)
--- Name: create_new_templates(character varying[]); Type: FUNCTION; Schema: attacksimulator; Owner: towerstreet
+-- Name: create_new_templates(character varying[]); Type: FUNCTION; Schema: attacksimulator
 --
 
 CREATE FUNCTION attacksimulator.create_new_templates(VARIADIC assessment_keys character varying[]) RETURNS void
@@ -116,11 +106,9 @@ END;
 $$;
 
 
-ALTER FUNCTION attacksimulator.create_new_templates(VARIADIC assessment_keys character varying[]) OWNER TO towerstreet;
-
 --
 -- TOC entry 260 (class 1255 OID 400954)
--- Name: update_simulation_templates(character varying[]); Type: FUNCTION; Schema: attacksimulator; Owner: towerstreet
+-- Name: update_simulation_templates(character varying[]); Type: FUNCTION; Schema: attacksimulator
 --
 
 CREATE FUNCTION attacksimulator.update_simulation_templates(VARIADIC assessment_keys character varying[]) RETURNS void
@@ -145,11 +133,9 @@ END;
 $$;
 
 
-ALTER FUNCTION attacksimulator.update_simulation_templates(VARIADIC assessment_keys character varying[]) OWNER TO towerstreet;
-
 --
 -- TOC entry 276 (class 1255 OID 401002)
--- Name: create_ops_user(character varying); Type: FUNCTION; Schema: public; Owner: towerstreet
+-- Name: create_ops_user(character varying); Type: FUNCTION; Schema: public
 --
 
 CREATE FUNCTION public.create_ops_user(username_par character varying) RETURNS integer
@@ -166,7 +152,7 @@ $$;
 
 --
 -- TOC entry 274 (class 1255 OID 400962)
--- Name: add_simulation_scoring_config(character varying[], scoring.simulation_scoring_config_description[]); Type: FUNCTION; Schema: scoring; Owner: towerstreet
+-- Name: add_simulation_scoring_config(character varying[], scoring.simulation_scoring_config_description[]); Type: FUNCTION; Schema: scoring
 --
 
 CREATE FUNCTION scoring.add_simulation_scoring_config(assessment_keys character varying[], tasks_description scoring.simulation_scoring_config_description[]) RETURNS void
@@ -196,15 +182,13 @@ END;
 $$;
 
 
-ALTER FUNCTION scoring.add_simulation_scoring_config(assessment_keys character varying[], tasks_description scoring.simulation_scoring_config_description[]) OWNER TO towerstreet;
-
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
 --
 -- TOC entry 209 (class 1259 OID 399014)
--- Name: simulation; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.simulation (
@@ -218,11 +202,9 @@ CREATE TABLE attacksimulator.simulation (
 );
 
 
-ALTER TABLE attacksimulator.simulation OWNER TO towerstreet;
-
 --
 -- TOC entry 211 (class 1259 OID 399027)
--- Name: simulation_outcome; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_outcome; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.simulation_outcome (
@@ -236,11 +218,9 @@ CREATE TABLE attacksimulator.simulation_outcome (
 );
 
 
-ALTER TABLE attacksimulator.simulation_outcome OWNER TO towerstreet;
-
 --
 -- TOC entry 215 (class 1259 OID 399042)
--- Name: user; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: user; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator."user" (
@@ -252,11 +232,9 @@ CREATE TABLE attacksimulator."user" (
 );
 
 
-ALTER TABLE attacksimulator."user" OWNER TO towerstreet;
-
 --
 -- TOC entry 238 (class 1259 OID 400835)
--- Name: campaign_visitor; Type: TABLE; Schema: public; Owner: towerstreet
+-- Name: campaign_visitor; Type: TABLE; Schema: public
 --
 
 CREATE TABLE public.campaign_visitor (
@@ -269,11 +247,9 @@ CREATE TABLE public.campaign_visitor (
 );
 
 
-ALTER TABLE public.campaign_visitor OWNER TO towerstreet;
-
 --
 -- TOC entry 233 (class 1259 OID 400359)
--- Name: scoring_outcome; Type: TABLE; Schema: scoring; Owner: towerstreet
+-- Name: scoring_outcome; Type: TABLE; Schema: scoring
 --
 
 CREATE TABLE scoring.scoring_outcome (
@@ -286,11 +262,9 @@ CREATE TABLE scoring.scoring_outcome (
 );
 
 
-ALTER TABLE scoring.scoring_outcome OWNER TO towerstreet;
-
 --
 -- TOC entry 243 (class 1259 OID 400996)
--- Name: campaign_visitor_simulation; Type: VIEW; Schema: attacksimulator; Owner: towerstreet
+-- Name: campaign_visitor_simulation; Type: VIEW; Schema: attacksimulator
 --
 
 CREATE VIEW attacksimulator.campaign_visitor_simulation AS
@@ -315,11 +289,9 @@ CREATE VIEW attacksimulator.campaign_visitor_simulation AS
   ORDER BY sim_o.finished_at DESC;
 
 
-ALTER TABLE attacksimulator.campaign_visitor_simulation OWNER TO towerstreet;
-
 --
 -- TOC entry 199 (class 1259 OID 398975)
--- Name: client_request; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: client_request; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.client_request (
@@ -336,11 +308,9 @@ CREATE TABLE attacksimulator.client_request (
 );
 
 
-ALTER TABLE attacksimulator.client_request OWNER TO towerstreet;
-
 --
 -- TOC entry 200 (class 1259 OID 398981)
--- Name: client_request_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: client_request_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.client_request_id_seq
@@ -351,12 +321,10 @@ CREATE SEQUENCE attacksimulator.client_request_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.client_request_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3286 (class 0 OID 0)
 -- Dependencies: 200
--- Name: client_request_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: client_request_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.client_request_id_seq OWNED BY attacksimulator.client_request.id;
@@ -364,7 +332,7 @@ ALTER SEQUENCE attacksimulator.client_request_id_seq OWNED BY attacksimulator.cl
 
 --
 -- TOC entry 201 (class 1259 OID 398983)
--- Name: network_segment; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: network_segment; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.network_segment (
@@ -378,11 +346,9 @@ CREATE TABLE attacksimulator.network_segment (
 );
 
 
-ALTER TABLE attacksimulator.network_segment OWNER TO towerstreet;
-
 --
 -- TOC entry 202 (class 1259 OID 398989)
--- Name: network_segment_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: network_segment_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.network_segment_id_seq
@@ -393,12 +359,10 @@ CREATE SEQUENCE attacksimulator.network_segment_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.network_segment_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3287 (class 0 OID 0)
 -- Dependencies: 202
--- Name: network_segment_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: network_segment_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.network_segment_id_seq OWNED BY attacksimulator.network_segment.id;
@@ -406,7 +370,7 @@ ALTER SEQUENCE attacksimulator.network_segment_id_seq OWNED BY attacksimulator.n
 
 --
 -- TOC entry 203 (class 1259 OID 398991)
--- Name: outcome_task_result; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: outcome_task_result; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.outcome_task_result (
@@ -421,11 +385,9 @@ CREATE TABLE attacksimulator.outcome_task_result (
 );
 
 
-ALTER TABLE attacksimulator.outcome_task_result OWNER TO towerstreet;
-
 --
 -- TOC entry 204 (class 1259 OID 398997)
--- Name: outcome_task_result_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: outcome_task_result_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.outcome_task_result_id_seq
@@ -436,12 +398,10 @@ CREATE SEQUENCE attacksimulator.outcome_task_result_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.outcome_task_result_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3288 (class 0 OID 0)
 -- Dependencies: 204
--- Name: outcome_task_result_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: outcome_task_result_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.outcome_task_result_id_seq OWNED BY attacksimulator.outcome_task_result.id;
@@ -449,7 +409,7 @@ ALTER SEQUENCE attacksimulator.outcome_task_result_id_seq OWNED BY attacksimulat
 
 --
 -- TOC entry 205 (class 1259 OID 398999)
--- Name: received_data; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: received_data; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.received_data (
@@ -463,11 +423,9 @@ CREATE TABLE attacksimulator.received_data (
 );
 
 
-ALTER TABLE attacksimulator.received_data OWNER TO towerstreet;
-
 --
 -- TOC entry 206 (class 1259 OID 399006)
--- Name: received_data_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: received_data_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.received_data_id_seq
@@ -478,12 +436,10 @@ CREATE SEQUENCE attacksimulator.received_data_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.received_data_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3289 (class 0 OID 0)
 -- Dependencies: 206
--- Name: received_data_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: received_data_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.received_data_id_seq OWNED BY attacksimulator.received_data.id;
@@ -491,7 +447,7 @@ ALTER SEQUENCE attacksimulator.received_data_id_seq OWNED BY attacksimulator.rec
 
 --
 -- TOC entry 207 (class 1259 OID 399008)
--- Name: runner; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: runner; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.runner (
@@ -501,11 +457,9 @@ CREATE TABLE attacksimulator.runner (
 );
 
 
-ALTER TABLE attacksimulator.runner OWNER TO towerstreet;
-
 --
 -- TOC entry 208 (class 1259 OID 399012)
--- Name: runner_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: runner_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.runner_id_seq
@@ -516,12 +470,10 @@ CREATE SEQUENCE attacksimulator.runner_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.runner_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3290 (class 0 OID 0)
 -- Dependencies: 208
--- Name: runner_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: runner_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.runner_id_seq OWNED BY attacksimulator.runner.id;
@@ -529,7 +481,7 @@ ALTER SEQUENCE attacksimulator.runner_id_seq OWNED BY attacksimulator.runner.id;
 
 --
 -- TOC entry 210 (class 1259 OID 399025)
--- Name: simulation_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.simulation_id_seq
@@ -540,12 +492,10 @@ CREATE SEQUENCE attacksimulator.simulation_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.simulation_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3291 (class 0 OID 0)
 -- Dependencies: 210
--- Name: simulation_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.simulation_id_seq OWNED BY attacksimulator.simulation.id;
@@ -553,7 +503,7 @@ ALTER SEQUENCE attacksimulator.simulation_id_seq OWNED BY attacksimulator.simula
 
 --
 -- TOC entry 212 (class 1259 OID 399031)
--- Name: simulation_outcome_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_outcome_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.simulation_outcome_id_seq
@@ -564,12 +514,10 @@ CREATE SEQUENCE attacksimulator.simulation_outcome_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.simulation_outcome_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3292 (class 0 OID 0)
 -- Dependencies: 212
--- Name: simulation_outcome_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_outcome_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.simulation_outcome_id_seq OWNED BY attacksimulator.simulation_outcome.id;
@@ -577,7 +525,7 @@ ALTER SEQUENCE attacksimulator.simulation_outcome_id_seq OWNED BY attacksimulato
 
 --
 -- TOC entry 213 (class 1259 OID 399033)
--- Name: task; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: task; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.task (
@@ -589,11 +537,9 @@ CREATE TABLE attacksimulator.task (
 );
 
 
-ALTER TABLE attacksimulator.task OWNER TO towerstreet;
-
 --
 -- TOC entry 220 (class 1259 OID 399977)
--- Name: url_test; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: url_test; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.url_test (
@@ -607,11 +553,9 @@ CREATE TABLE attacksimulator.url_test (
 );
 
 
-ALTER TABLE attacksimulator.url_test OWNER TO towerstreet;
-
 --
 -- TOC entry 246 (class 1259 OID 401024)
--- Name: simulation_results; Type: VIEW; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_results; Type: VIEW; Schema: attacksimulator
 --
 
 CREATE VIEW attacksimulator.simulation_results AS
@@ -636,11 +580,9 @@ CREATE VIEW attacksimulator.simulation_results AS
      LEFT JOIN attacksimulator.url_test url ON ((tr.url_test_id = url.id)));
 
 
-ALTER TABLE attacksimulator.simulation_results OWNER TO towerstreet;
-
 --
 -- TOC entry 226 (class 1259 OID 400177)
--- Name: simulation_template; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.simulation_template (
@@ -651,11 +593,9 @@ CREATE TABLE attacksimulator.simulation_template (
 );
 
 
-ALTER TABLE attacksimulator.simulation_template OWNER TO towerstreet;
-
 --
 -- TOC entry 227 (class 1259 OID 400190)
--- Name: simulation_template_config; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template_config; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.simulation_template_config (
@@ -666,15 +606,12 @@ CREATE TABLE attacksimulator.simulation_template_config (
 );
 
 
-ALTER TABLE attacksimulator.simulation_template_config OWNER TO towerstreet;
-
 --
 -- TOC entry 225 (class 1259 OID 400175)
--- Name: simulation_template_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.simulation_template_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -682,12 +619,10 @@ CREATE SEQUENCE attacksimulator.simulation_template_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.simulation_template_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3293 (class 0 OID 0)
 -- Dependencies: 225
--- Name: simulation_template_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.simulation_template_id_seq OWNED BY attacksimulator.simulation_template.id;
@@ -695,7 +630,7 @@ ALTER SEQUENCE attacksimulator.simulation_template_id_seq OWNED BY attacksimulat
 
 --
 -- TOC entry 229 (class 1259 OID 400215)
--- Name: test_case; Type: TABLE; Schema: attacksimulator; Owner: towerstreet
+-- Name: test_case; Type: TABLE; Schema: attacksimulator
 --
 
 CREATE TABLE attacksimulator.test_case (
@@ -707,11 +642,9 @@ CREATE TABLE attacksimulator.test_case (
 );
 
 
-ALTER TABLE attacksimulator.test_case OWNER TO towerstreet;
-
 --
 -- TOC entry 248 (class 1259 OID 401034)
--- Name: task_for_simulation; Type: VIEW; Schema: attacksimulator; Owner: towerstreet
+-- Name: task_for_simulation; Type: VIEW; Schema: attacksimulator
 --
 
 CREATE VIEW attacksimulator.task_for_simulation AS
@@ -728,11 +661,9 @@ CREATE VIEW attacksimulator.task_for_simulation AS
      LEFT JOIN attacksimulator.test_case tc ON ((tc.id = c.test_case_id)));
 
 
-ALTER TABLE attacksimulator.task_for_simulation OWNER TO towerstreet;
-
 --
 -- TOC entry 214 (class 1259 OID 399040)
--- Name: task_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: task_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.task_id_seq
@@ -743,12 +674,10 @@ CREATE SEQUENCE attacksimulator.task_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.task_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3294 (class 0 OID 0)
 -- Dependencies: 214
--- Name: task_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: task_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.task_id_seq OWNED BY attacksimulator.task.id;
@@ -756,11 +685,10 @@ ALTER SEQUENCE attacksimulator.task_id_seq OWNED BY attacksimulator.task.id;
 
 --
 -- TOC entry 228 (class 1259 OID 400213)
--- Name: test_case_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: test_case_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.test_case_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -768,12 +696,10 @@ CREATE SEQUENCE attacksimulator.test_case_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.test_case_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3295 (class 0 OID 0)
 -- Dependencies: 228
--- Name: test_case_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: test_case_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.test_case_id_seq OWNED BY attacksimulator.test_case.id;
@@ -781,11 +707,10 @@ ALTER SEQUENCE attacksimulator.test_case_id_seq OWNED BY attacksimulator.test_ca
 
 --
 -- TOC entry 219 (class 1259 OID 399975)
--- Name: url_test_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: url_test_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.url_test_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -793,12 +718,10 @@ CREATE SEQUENCE attacksimulator.url_test_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.url_test_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3296 (class 0 OID 0)
 -- Dependencies: 219
--- Name: url_test_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: url_test_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.url_test_id_seq OWNED BY attacksimulator.url_test.id;
@@ -806,7 +729,7 @@ ALTER SEQUENCE attacksimulator.url_test_id_seq OWNED BY attacksimulator.url_test
 
 --
 -- TOC entry 216 (class 1259 OID 399049)
--- Name: user_id_seq; Type: SEQUENCE; Schema: attacksimulator; Owner: towerstreet
+-- Name: user_id_seq; Type: SEQUENCE; Schema: attacksimulator
 --
 
 CREATE SEQUENCE attacksimulator.user_id_seq
@@ -817,12 +740,10 @@ CREATE SEQUENCE attacksimulator.user_id_seq
     CACHE 1;
 
 
-ALTER TABLE attacksimulator.user_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3297 (class 0 OID 0)
 -- Dependencies: 216
--- Name: user_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator; Owner: towerstreet
+-- Name: user_id_seq; Type: SEQUENCE OWNED BY; Schema: attacksimulator
 --
 
 ALTER SEQUENCE attacksimulator.user_id_seq OWNED BY attacksimulator."user".id;
@@ -830,7 +751,7 @@ ALTER SEQUENCE attacksimulator.user_id_seq OWNED BY attacksimulator."user".id;
 
 --
 -- TOC entry 222 (class 1259 OID 400095)
--- Name: assessment_type; Type: TABLE; Schema: public; Owner: towerstreet
+-- Name: assessment_type; Type: TABLE; Schema: public
 --
 
 CREATE TABLE public.assessment_type (
@@ -841,15 +762,12 @@ CREATE TABLE public.assessment_type (
 );
 
 
-ALTER TABLE public.assessment_type OWNER TO towerstreet;
-
 --
 -- TOC entry 221 (class 1259 OID 400093)
--- Name: assessment_type_id_seq; Type: SEQUENCE; Schema: public; Owner: towerstreet
+-- Name: assessment_type_id_seq; Type: SEQUENCE; Schema: public
 --
 
 CREATE SEQUENCE public.assessment_type_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -857,12 +775,10 @@ CREATE SEQUENCE public.assessment_type_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.assessment_type_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3298 (class 0 OID 0)
 -- Dependencies: 221
--- Name: assessment_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: towerstreet
+-- Name: assessment_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public
 --
 
 ALTER SEQUENCE public.assessment_type_id_seq OWNED BY public.assessment_type.id;
@@ -870,11 +786,10 @@ ALTER SEQUENCE public.assessment_type_id_seq OWNED BY public.assessment_type.id;
 
 --
 -- TOC entry 237 (class 1259 OID 400833)
--- Name: campaign_visitor_id_seq; Type: SEQUENCE; Schema: public; Owner: towerstreet
+-- Name: campaign_visitor_id_seq; Type: SEQUENCE; Schema: public
 --
 
 CREATE SEQUENCE public.campaign_visitor_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -882,12 +797,10 @@ CREATE SEQUENCE public.campaign_visitor_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.campaign_visitor_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3299 (class 0 OID 0)
 -- Dependencies: 237
--- Name: campaign_visitor_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: towerstreet
+-- Name: campaign_visitor_id_seq; Type: SEQUENCE OWNED BY; Schema: public
 --
 
 ALTER SEQUENCE public.campaign_visitor_id_seq OWNED BY public.campaign_visitor.id;
@@ -895,7 +808,7 @@ ALTER SEQUENCE public.campaign_visitor_id_seq OWNED BY public.campaign_visitor.i
 
 --
 -- TOC entry 218 (class 1259 OID 399628)
--- Name: customer; Type: TABLE; Schema: public; Owner: towerstreet
+-- Name: customer; Type: TABLE; Schema: public
 --
 
 CREATE TABLE public.customer (
@@ -909,15 +822,12 @@ CREATE TABLE public.customer (
 );
 
 
-ALTER TABLE public.customer OWNER TO towerstreet;
-
 --
 -- TOC entry 217 (class 1259 OID 399626)
--- Name: company_id_seq; Type: SEQUENCE; Schema: public; Owner: towerstreet
+-- Name: company_id_seq; Type: SEQUENCE; Schema: public
 --
 
 CREATE SEQUENCE public.company_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -925,12 +835,10 @@ CREATE SEQUENCE public.company_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.company_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3300 (class 0 OID 0)
 -- Dependencies: 217
--- Name: company_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: towerstreet
+-- Name: company_id_seq; Type: SEQUENCE OWNED BY; Schema: public
 --
 
 ALTER SEQUENCE public.company_id_seq OWNED BY public.customer.id;
@@ -938,7 +846,7 @@ ALTER SEQUENCE public.company_id_seq OWNED BY public.customer.id;
 
 --
 -- TOC entry 224 (class 1259 OID 400109)
--- Name: customer_assessment; Type: TABLE; Schema: public; Owner: towerstreet
+-- Name: customer_assessment; Type: TABLE; Schema: public
 --
 
 CREATE TABLE public.customer_assessment (
@@ -950,15 +858,12 @@ CREATE TABLE public.customer_assessment (
 );
 
 
-ALTER TABLE public.customer_assessment OWNER TO towerstreet;
-
 --
 -- TOC entry 223 (class 1259 OID 400107)
--- Name: customer_assessment_id_seq; Type: SEQUENCE; Schema: public; Owner: towerstreet
+-- Name: customer_assessment_id_seq; Type: SEQUENCE; Schema: public
 --
 
 CREATE SEQUENCE public.customer_assessment_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -966,12 +871,10 @@ CREATE SEQUENCE public.customer_assessment_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.customer_assessment_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3301 (class 0 OID 0)
 -- Dependencies: 223
--- Name: customer_assessment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: towerstreet
+-- Name: customer_assessment_id_seq; Type: SEQUENCE OWNED BY; Schema: public
 --
 
 ALTER SEQUENCE public.customer_assessment_id_seq OWNED BY public.customer_assessment.id;
@@ -979,7 +882,7 @@ ALTER SEQUENCE public.customer_assessment_id_seq OWNED BY public.customer_assess
 
 --
 -- TOC entry 239 (class 1259 OID 400885)
--- Name: campaign_score_histogram; Type: TABLE; Schema: scoring; Owner: towerstreet
+-- Name: campaign_score_histogram; Type: TABLE; Schema: scoring
 --
 
 CREATE TABLE scoring.campaign_score_histogram (
@@ -989,11 +892,9 @@ CREATE TABLE scoring.campaign_score_histogram (
 );
 
 
-ALTER TABLE scoring.campaign_score_histogram OWNER TO towerstreet;
-
 --
 -- TOC entry 231 (class 1259 OID 400345)
--- Name: scoring_definition; Type: TABLE; Schema: scoring; Owner: towerstreet
+-- Name: scoring_definition; Type: TABLE; Schema: scoring
 --
 
 CREATE TABLE scoring.scoring_definition (
@@ -1009,15 +910,12 @@ CREATE TABLE scoring.scoring_definition (
 );
 
 
-ALTER TABLE scoring.scoring_definition OWNER TO towerstreet;
-
 --
 -- TOC entry 230 (class 1259 OID 400343)
--- Name: scoring_definition_id_seq; Type: SEQUENCE; Schema: scoring; Owner: towerstreet
+-- Name: scoring_definition_id_seq; Type: SEQUENCE; Schema: scoring
 --
 
 CREATE SEQUENCE scoring.scoring_definition_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -1025,12 +923,10 @@ CREATE SEQUENCE scoring.scoring_definition_id_seq
     CACHE 1;
 
 
-ALTER TABLE scoring.scoring_definition_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3302 (class 0 OID 0)
 -- Dependencies: 230
--- Name: scoring_definition_id_seq; Type: SEQUENCE OWNED BY; Schema: scoring; Owner: towerstreet
+-- Name: scoring_definition_id_seq; Type: SEQUENCE OWNED BY; Schema: scoring
 --
 
 ALTER SEQUENCE scoring.scoring_definition_id_seq OWNED BY scoring.scoring_definition.id;
@@ -1038,7 +934,7 @@ ALTER SEQUENCE scoring.scoring_definition_id_seq OWNED BY scoring.scoring_defini
 
 --
 -- TOC entry 236 (class 1259 OID 400396)
--- Name: simulation_scoring_config; Type: TABLE; Schema: scoring; Owner: towerstreet
+-- Name: simulation_scoring_config; Type: TABLE; Schema: scoring
 --
 
 CREATE TABLE scoring.simulation_scoring_config (
@@ -1048,11 +944,9 @@ CREATE TABLE scoring.simulation_scoring_config (
 );
 
 
-ALTER TABLE scoring.simulation_scoring_config OWNER TO towerstreet;
-
 --
 -- TOC entry 244 (class 1259 OID 401014)
--- Name: scoring_definition_with_template; Type: VIEW; Schema: scoring; Owner: towerstreet
+-- Name: scoring_definition_with_template; Type: VIEW; Schema: scoring
 --
 
 CREATE VIEW scoring.scoring_definition_with_template AS
@@ -1067,15 +961,12 @@ CREATE VIEW scoring.scoring_definition_with_template AS
      JOIN scoring.scoring_definition sd ON ((ssc.scoring_definition_id = sd.id)));
 
 
-ALTER TABLE scoring.scoring_definition_with_template OWNER TO towerstreet;
-
 --
 -- TOC entry 232 (class 1259 OID 400357)
--- Name: scoring_outcome_id_seq; Type: SEQUENCE; Schema: scoring; Owner: towerstreet
+-- Name: scoring_outcome_id_seq; Type: SEQUENCE; Schema: scoring
 --
 
 CREATE SEQUENCE scoring.scoring_outcome_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -1083,12 +974,10 @@ CREATE SEQUENCE scoring.scoring_outcome_id_seq
     CACHE 1;
 
 
-ALTER TABLE scoring.scoring_outcome_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3303 (class 0 OID 0)
 -- Dependencies: 232
--- Name: scoring_outcome_id_seq; Type: SEQUENCE OWNED BY; Schema: scoring; Owner: towerstreet
+-- Name: scoring_outcome_id_seq; Type: SEQUENCE OWNED BY; Schema: scoring
 --
 
 ALTER SEQUENCE scoring.scoring_outcome_id_seq OWNED BY scoring.scoring_outcome.id;
@@ -1096,7 +985,7 @@ ALTER SEQUENCE scoring.scoring_outcome_id_seq OWNED BY scoring.scoring_outcome.i
 
 --
 -- TOC entry 235 (class 1259 OID 400377)
--- Name: scoring_result; Type: TABLE; Schema: scoring; Owner: towerstreet
+-- Name: scoring_result; Type: TABLE; Schema: scoring
 --
 
 CREATE TABLE scoring.scoring_result (
@@ -1109,15 +998,12 @@ CREATE TABLE scoring.scoring_result (
 );
 
 
-ALTER TABLE scoring.scoring_result OWNER TO towerstreet;
-
 --
 -- TOC entry 234 (class 1259 OID 400375)
--- Name: scoring_result_id_seq; Type: SEQUENCE; Schema: scoring; Owner: towerstreet
+-- Name: scoring_result_id_seq; Type: SEQUENCE; Schema: scoring
 --
 
 CREATE SEQUENCE scoring.scoring_result_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -1125,12 +1011,10 @@ CREATE SEQUENCE scoring.scoring_result_id_seq
     CACHE 1;
 
 
-ALTER TABLE scoring.scoring_result_id_seq OWNER TO towerstreet;
-
 --
 -- TOC entry 3304 (class 0 OID 0)
 -- Dependencies: 234
--- Name: scoring_result_id_seq; Type: SEQUENCE OWNED BY; Schema: scoring; Owner: towerstreet
+-- Name: scoring_result_id_seq; Type: SEQUENCE OWNED BY; Schema: scoring
 --
 
 ALTER SEQUENCE scoring.scoring_result_id_seq OWNED BY scoring.scoring_result.id;
@@ -1138,7 +1022,7 @@ ALTER SEQUENCE scoring.scoring_result_id_seq OWNED BY scoring.scoring_result.id;
 
 --
 -- TOC entry 245 (class 1259 OID 401019)
--- Name: simulation_outcome_for_scoring; Type: VIEW; Schema: scoring; Owner: towerstreet
+-- Name: simulation_outcome_for_scoring; Type: VIEW; Schema: scoring
 --
 
 CREATE VIEW scoring.simulation_outcome_for_scoring AS
@@ -1156,11 +1040,9 @@ CREATE VIEW scoring.simulation_outcome_for_scoring AS
      LEFT JOIN scoring.scoring_outcome so ON ((o.id = so.simulation_outcome_id)));
 
 
-ALTER TABLE scoring.simulation_outcome_for_scoring OWNER TO towerstreet;
-
 --
 -- TOC entry 247 (class 1259 OID 401029)
--- Name: simulation_scoring_result; Type: VIEW; Schema: scoring; Owner: towerstreet
+-- Name: simulation_scoring_result; Type: VIEW; Schema: scoring
 --
 
 CREATE VIEW scoring.simulation_scoring_result AS
@@ -1181,11 +1063,9 @@ CREATE VIEW scoring.simulation_scoring_result AS
      JOIN attacksimulator.simulation_outcome sim_o ON ((sim_o.id = so.simulation_outcome_id)));
 
 
-ALTER TABLE scoring.simulation_scoring_result OWNER TO towerstreet;
-
 --
 -- TOC entry 2975 (class 2604 OID 399215)
--- Name: client_request id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: client_request id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.client_request ALTER COLUMN id SET DEFAULT nextval('attacksimulator.client_request_id_seq'::regclass);
@@ -1193,7 +1073,7 @@ ALTER TABLE ONLY attacksimulator.client_request ALTER COLUMN id SET DEFAULT next
 
 --
 -- TOC entry 2976 (class 2604 OID 399216)
--- Name: network_segment id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: network_segment id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.network_segment ALTER COLUMN id SET DEFAULT nextval('attacksimulator.network_segment_id_seq'::regclass);
@@ -1201,7 +1081,7 @@ ALTER TABLE ONLY attacksimulator.network_segment ALTER COLUMN id SET DEFAULT nex
 
 --
 -- TOC entry 2977 (class 2604 OID 399217)
--- Name: outcome_task_result id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: outcome_task_result id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.outcome_task_result ALTER COLUMN id SET DEFAULT nextval('attacksimulator.outcome_task_result_id_seq'::regclass);
@@ -1209,7 +1089,7 @@ ALTER TABLE ONLY attacksimulator.outcome_task_result ALTER COLUMN id SET DEFAULT
 
 --
 -- TOC entry 2979 (class 2604 OID 399218)
--- Name: received_data id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: received_data id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.received_data ALTER COLUMN id SET DEFAULT nextval('attacksimulator.received_data_id_seq'::regclass);
@@ -1217,7 +1097,7 @@ ALTER TABLE ONLY attacksimulator.received_data ALTER COLUMN id SET DEFAULT nextv
 
 --
 -- TOC entry 2980 (class 2604 OID 399219)
--- Name: runner id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: runner id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.runner ALTER COLUMN id SET DEFAULT nextval('attacksimulator.runner_id_seq'::regclass);
@@ -1225,7 +1105,7 @@ ALTER TABLE ONLY attacksimulator.runner ALTER COLUMN id SET DEFAULT nextval('att
 
 --
 -- TOC entry 2983 (class 2604 OID 399220)
--- Name: simulation id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation ALTER COLUMN id SET DEFAULT nextval('attacksimulator.simulation_id_seq'::regclass);
@@ -1233,7 +1113,7 @@ ALTER TABLE ONLY attacksimulator.simulation ALTER COLUMN id SET DEFAULT nextval(
 
 --
 -- TOC entry 2985 (class 2604 OID 399221)
--- Name: simulation_outcome id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_outcome id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation_outcome ALTER COLUMN id SET DEFAULT nextval('attacksimulator.simulation_outcome_id_seq'::regclass);
@@ -1241,7 +1121,7 @@ ALTER TABLE ONLY attacksimulator.simulation_outcome ALTER COLUMN id SET DEFAULT 
 
 --
 -- TOC entry 3001 (class 2604 OID 400180)
--- Name: simulation_template id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation_template ALTER COLUMN id SET DEFAULT nextval('attacksimulator.simulation_template_id_seq'::regclass);
@@ -1249,7 +1129,7 @@ ALTER TABLE ONLY attacksimulator.simulation_template ALTER COLUMN id SET DEFAULT
 
 --
 -- TOC entry 2987 (class 2604 OID 399222)
--- Name: task id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: task id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.task ALTER COLUMN id SET DEFAULT nextval('attacksimulator.task_id_seq'::regclass);
@@ -1257,7 +1137,7 @@ ALTER TABLE ONLY attacksimulator.task ALTER COLUMN id SET DEFAULT nextval('attac
 
 --
 -- TOC entry 3002 (class 2604 OID 400218)
--- Name: test_case id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: test_case id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.test_case ALTER COLUMN id SET DEFAULT nextval('attacksimulator.test_case_id_seq'::regclass);
@@ -1265,7 +1145,7 @@ ALTER TABLE ONLY attacksimulator.test_case ALTER COLUMN id SET DEFAULT nextval('
 
 --
 -- TOC entry 2996 (class 2604 OID 399980)
--- Name: url_test id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: url_test id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.url_test ALTER COLUMN id SET DEFAULT nextval('attacksimulator.url_test_id_seq'::regclass);
@@ -1273,7 +1153,7 @@ ALTER TABLE ONLY attacksimulator.url_test ALTER COLUMN id SET DEFAULT nextval('a
 
 --
 -- TOC entry 2989 (class 2604 OID 399223)
--- Name: user id; Type: DEFAULT; Schema: attacksimulator; Owner: towerstreet
+-- Name: user id; Type: DEFAULT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator."user" ALTER COLUMN id SET DEFAULT nextval('attacksimulator.user_id_seq'::regclass);
@@ -1281,7 +1161,7 @@ ALTER TABLE ONLY attacksimulator."user" ALTER COLUMN id SET DEFAULT nextval('att
 
 --
 -- TOC entry 2998 (class 2604 OID 400098)
--- Name: assessment_type id; Type: DEFAULT; Schema: public; Owner: towerstreet
+-- Name: assessment_type id; Type: DEFAULT; Schema: public
 --
 
 ALTER TABLE ONLY public.assessment_type ALTER COLUMN id SET DEFAULT nextval('public.assessment_type_id_seq'::regclass);
@@ -1289,7 +1169,7 @@ ALTER TABLE ONLY public.assessment_type ALTER COLUMN id SET DEFAULT nextval('pub
 
 --
 -- TOC entry 3008 (class 2604 OID 400838)
--- Name: campaign_visitor id; Type: DEFAULT; Schema: public; Owner: towerstreet
+-- Name: campaign_visitor id; Type: DEFAULT; Schema: public
 --
 
 ALTER TABLE ONLY public.campaign_visitor ALTER COLUMN id SET DEFAULT nextval('public.campaign_visitor_id_seq'::regclass);
@@ -1297,7 +1177,7 @@ ALTER TABLE ONLY public.campaign_visitor ALTER COLUMN id SET DEFAULT nextval('pu
 
 --
 -- TOC entry 2991 (class 2604 OID 399631)
--- Name: customer id; Type: DEFAULT; Schema: public; Owner: towerstreet
+-- Name: customer id; Type: DEFAULT; Schema: public
 --
 
 ALTER TABLE ONLY public.customer ALTER COLUMN id SET DEFAULT nextval('public.company_id_seq'::regclass);
@@ -1305,7 +1185,7 @@ ALTER TABLE ONLY public.customer ALTER COLUMN id SET DEFAULT nextval('public.com
 
 --
 -- TOC entry 3000 (class 2604 OID 400112)
--- Name: customer_assessment id; Type: DEFAULT; Schema: public; Owner: towerstreet
+-- Name: customer_assessment id; Type: DEFAULT; Schema: public
 --
 
 ALTER TABLE ONLY public.customer_assessment ALTER COLUMN id SET DEFAULT nextval('public.customer_assessment_id_seq'::regclass);
@@ -1313,7 +1193,7 @@ ALTER TABLE ONLY public.customer_assessment ALTER COLUMN id SET DEFAULT nextval(
 
 --
 -- TOC entry 3004 (class 2604 OID 400348)
--- Name: scoring_definition id; Type: DEFAULT; Schema: scoring; Owner: towerstreet
+-- Name: scoring_definition id; Type: DEFAULT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.scoring_definition ALTER COLUMN id SET DEFAULT nextval('scoring.scoring_definition_id_seq'::regclass);
@@ -1321,7 +1201,7 @@ ALTER TABLE ONLY scoring.scoring_definition ALTER COLUMN id SET DEFAULT nextval(
 
 --
 -- TOC entry 3006 (class 2604 OID 400362)
--- Name: scoring_outcome id; Type: DEFAULT; Schema: scoring; Owner: towerstreet
+-- Name: scoring_outcome id; Type: DEFAULT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.scoring_outcome ALTER COLUMN id SET DEFAULT nextval('scoring.scoring_outcome_id_seq'::regclass);
@@ -1329,7 +1209,7 @@ ALTER TABLE ONLY scoring.scoring_outcome ALTER COLUMN id SET DEFAULT nextval('sc
 
 --
 -- TOC entry 3007 (class 2604 OID 400380)
--- Name: scoring_result id; Type: DEFAULT; Schema: scoring; Owner: towerstreet
+-- Name: scoring_result id; Type: DEFAULT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.scoring_result ALTER COLUMN id SET DEFAULT nextval('scoring.scoring_result_id_seq'::regclass);
@@ -1338,7 +1218,7 @@ ALTER TABLE ONLY scoring.scoring_result ALTER COLUMN id SET DEFAULT nextval('sco
 --
 -- TOC entry 3239 (class 0 OID 398975)
 -- Dependencies: 199
--- Data for Name: client_request; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: client_request; Type: TABLE DATA; Schema: attacksimulator
 --
 
 
@@ -1346,7 +1226,7 @@ ALTER TABLE ONLY scoring.scoring_result ALTER COLUMN id SET DEFAULT nextval('sco
 --
 -- TOC entry 3241 (class 0 OID 398983)
 -- Dependencies: 201
--- Data for Name: network_segment; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: network_segment; Type: TABLE DATA; Schema: attacksimulator
 --
 
 
@@ -1354,7 +1234,7 @@ ALTER TABLE ONLY scoring.scoring_result ALTER COLUMN id SET DEFAULT nextval('sco
 --
 -- TOC entry 3243 (class 0 OID 398991)
 -- Dependencies: 203
--- Data for Name: outcome_task_result; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: outcome_task_result; Type: TABLE DATA; Schema: attacksimulator
 --
 
 
@@ -1362,7 +1242,7 @@ ALTER TABLE ONLY scoring.scoring_result ALTER COLUMN id SET DEFAULT nextval('sco
 --
 -- TOC entry 3245 (class 0 OID 398999)
 -- Dependencies: 205
--- Data for Name: received_data; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: received_data; Type: TABLE DATA; Schema: attacksimulator
 --
 
 
@@ -1370,7 +1250,7 @@ ALTER TABLE ONLY scoring.scoring_result ALTER COLUMN id SET DEFAULT nextval('sco
 --
 -- TOC entry 3247 (class 0 OID 399008)
 -- Dependencies: 207
--- Data for Name: runner; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: runner; Type: TABLE DATA; Schema: attacksimulator
 --
 
 INSERT INTO attacksimulator.runner VALUES (1, 'CIS74Test');
@@ -1385,7 +1265,7 @@ INSERT INTO attacksimulator.runner VALUES (7, 'EnvironmentTest');
 --
 -- TOC entry 3249 (class 0 OID 399014)
 -- Dependencies: 209
--- Data for Name: simulation; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: simulation; Type: TABLE DATA; Schema: attacksimulator
 --
 
 INSERT INTO attacksimulator.simulation VALUES (1, 1, '00000000-0000-0000-0000-000000000000', 'test simulation', 1, 4);
@@ -1411,7 +1291,7 @@ INSERT INTO attacksimulator.simulation VALUES (18, 1, 'f8c4bcc2-8d5e-4dea-8a89-e
 --
 -- TOC entry 3251 (class 0 OID 399027)
 -- Dependencies: 211
--- Data for Name: simulation_outcome; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: simulation_outcome; Type: TABLE DATA; Schema: attacksimulator
 --
 
 
@@ -1419,7 +1299,7 @@ INSERT INTO attacksimulator.simulation VALUES (18, 1, 'f8c4bcc2-8d5e-4dea-8a89-e
 --
 -- TOC entry 3266 (class 0 OID 400177)
 -- Dependencies: 226
--- Data for Name: simulation_template; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: simulation_template; Type: TABLE DATA; Schema: attacksimulator
 --
 
 INSERT INTO attacksimulator.simulation_template VALUES (1, '2019-05-02 08:46:51.846771', 1, NULL);
@@ -1456,7 +1336,7 @@ INSERT INTO attacksimulator.simulation_template VALUES (29, '2019-05-02 08:48:29
 --
 -- TOC entry 3267 (class 0 OID 400190)
 -- Dependencies: 227
--- Data for Name: simulation_template_config; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: simulation_template_config; Type: TABLE DATA; Schema: attacksimulator
 --
 
 INSERT INTO attacksimulator.simulation_template_config VALUES (1, 59, 59, 10);
@@ -2353,7 +2233,7 @@ INSERT INTO attacksimulator.simulation_template_config VALUES (27, 63, 62, 9);
 --
 -- TOC entry 3253 (class 0 OID 399033)
 -- Dependencies: 213
--- Data for Name: task; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: task; Type: TABLE DATA; Schema: attacksimulator
 --
 
 INSERT INTO attacksimulator.task VALUES (1, 1, 'cis-7.4-streaming-content', '{ "url": "https://www.youtube.com" }');
@@ -2442,7 +2322,7 @@ INSERT INTO attacksimulator.task VALUES (72, 4, 'cis-13.3-xlsx-empty', '{ "proto
 --
 -- TOC entry 3269 (class 0 OID 400215)
 -- Dependencies: 229
--- Data for Name: test_case; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: test_case; Type: TABLE DATA; Schema: attacksimulator
 --
 
 INSERT INTO attacksimulator.test_case VALUES (5, 'cis-7.4-cloud', 'Accessing cloud storage providers', 'The purpose of this simulation is to validate if the network filtering policy is in place and that it limits the system''s ability to connect to cloud storage providers not approved by the organization.
@@ -2500,7 +2380,7 @@ This is achieved by accessing public information provided by internet browser.')
 --
 -- TOC entry 3260 (class 0 OID 399977)
 -- Dependencies: 220
--- Data for Name: url_test; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: url_test; Type: TABLE DATA; Schema: attacksimulator
 --
 
 
@@ -2508,7 +2388,7 @@ This is achieved by accessing public information provided by internet browser.')
 --
 -- TOC entry 3255 (class 0 OID 399042)
 -- Dependencies: 215
--- Data for Name: user; Type: TABLE DATA; Schema: attacksimulator; Owner: towerstreet
+-- Data for Name: user; Type: TABLE DATA; Schema: attacksimulator
 --
 
 INSERT INTO attacksimulator."user" VALUES (1, 1, 'road_runner', NULL);
@@ -2518,7 +2398,7 @@ INSERT INTO attacksimulator."user" VALUES (2, 2, 'campaign', 1);
 --
 -- TOC entry 3262 (class 0 OID 400095)
 -- Dependencies: 222
--- Data for Name: assessment_type; Type: TABLE DATA; Schema: public; Owner: towerstreet
+-- Data for Name: assessment_type; Type: TABLE DATA; Schema: public
 --
 
 INSERT INTO public.assessment_type VALUES (1, 'light', 'Light Assessment Level');
@@ -2532,7 +2412,7 @@ INSERT INTO public.assessment_type VALUES (6, 'simulator-2019-03', 'Simulator 20
 --
 -- TOC entry 3278 (class 0 OID 400835)
 -- Dependencies: 238
--- Data for Name: campaign_visitor; Type: TABLE DATA; Schema: public; Owner: towerstreet
+-- Data for Name: campaign_visitor; Type: TABLE DATA; Schema: public
 --
 
 INSERT INTO public.campaign_visitor VALUES (1, 2, '2019-05-02 09:31:21.941588', NULL, NULL, NULL);
@@ -2541,7 +2421,7 @@ INSERT INTO public.campaign_visitor VALUES (1, 2, '2019-05-02 09:31:21.941588', 
 --
 -- TOC entry 3258 (class 0 OID 399628)
 -- Dependencies: 218
--- Data for Name: customer; Type: TABLE DATA; Schema: public; Owner: towerstreet
+-- Data for Name: customer; Type: TABLE DATA; Schema: public
 --
 
 INSERT INTO public.customer VALUES (1, 'ACME Inc.', 'acme', false, true);
@@ -2551,7 +2431,7 @@ INSERT INTO public.customer VALUES (2, 'simulator-2019-03', 'simulator-2019-03',
 --
 -- TOC entry 3264 (class 0 OID 400109)
 -- Dependencies: 224
--- Data for Name: customer_assessment; Type: TABLE DATA; Schema: public; Owner: towerstreet
+-- Data for Name: customer_assessment; Type: TABLE DATA; Schema: public
 --
 
 INSERT INTO public.customer_assessment VALUES (1, 1, 1, '2019-05-02 08:46:51.724278', NULL);
@@ -2561,7 +2441,7 @@ INSERT INTO public.customer_assessment VALUES (2, 6, 2, '2019-05-02 08:48:29.234
 --
 -- TOC entry 3279 (class 0 OID 400885)
 -- Dependencies: 239
--- Data for Name: campaign_score_histogram; Type: TABLE DATA; Schema: scoring; Owner: towerstreet
+-- Data for Name: campaign_score_histogram; Type: TABLE DATA; Schema: scoring
 --
 
 
@@ -2569,7 +2449,7 @@ INSERT INTO public.customer_assessment VALUES (2, 6, 2, '2019-05-02 08:48:29.234
 --
 -- TOC entry 3271 (class 0 OID 400345)
 -- Dependencies: 231
--- Data for Name: scoring_definition; Type: TABLE DATA; Schema: scoring; Owner: towerstreet
+-- Data for Name: scoring_definition; Type: TABLE DATA; Schema: scoring
 --
 
 INSERT INTO scoring.scoring_definition VALUES (8, 'cis-7.7', 'boolean-result', '7.7 Use of DNS Filtering Services', '{"successWhen": false}', '', 3, 'cis');
@@ -2603,7 +2483,7 @@ All domains and sites are periodically tested in our testing environment to ensu
 --
 -- TOC entry 3273 (class 0 OID 400359)
 -- Dependencies: 233
--- Data for Name: scoring_outcome; Type: TABLE DATA; Schema: scoring; Owner: towerstreet
+-- Data for Name: scoring_outcome; Type: TABLE DATA; Schema: scoring
 --
 
 
@@ -2611,7 +2491,7 @@ All domains and sites are periodically tested in our testing environment to ensu
 --
 -- TOC entry 3275 (class 0 OID 400377)
 -- Dependencies: 235
--- Data for Name: scoring_result; Type: TABLE DATA; Schema: scoring; Owner: towerstreet
+-- Data for Name: scoring_result; Type: TABLE DATA; Schema: scoring
 --
 
 
@@ -2619,7 +2499,7 @@ All domains and sites are periodically tested in our testing environment to ensu
 --
 -- TOC entry 3276 (class 0 OID 400396)
 -- Dependencies: 236
--- Data for Name: simulation_scoring_config; Type: TABLE DATA; Schema: scoring; Owner: towerstreet
+-- Data for Name: simulation_scoring_config; Type: TABLE DATA; Schema: scoring
 --
 
 INSERT INTO scoring.simulation_scoring_config VALUES (1, 19, 58);
@@ -3364,7 +3244,7 @@ INSERT INTO scoring.simulation_scoring_config VALUES (10, 29, 18);
 --
 -- TOC entry 3305 (class 0 OID 0)
 -- Dependencies: 200
--- Name: client_request_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: client_request_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.client_request_id_seq', 1, false);
@@ -3373,7 +3253,7 @@ SELECT pg_catalog.setval('attacksimulator.client_request_id_seq', 1, false);
 --
 -- TOC entry 3306 (class 0 OID 0)
 -- Dependencies: 202
--- Name: network_segment_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: network_segment_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.network_segment_id_seq', 1, false);
@@ -3382,7 +3262,7 @@ SELECT pg_catalog.setval('attacksimulator.network_segment_id_seq', 1, false);
 --
 -- TOC entry 3307 (class 0 OID 0)
 -- Dependencies: 204
--- Name: outcome_task_result_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: outcome_task_result_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.outcome_task_result_id_seq', 1, false);
@@ -3391,7 +3271,7 @@ SELECT pg_catalog.setval('attacksimulator.outcome_task_result_id_seq', 1, false)
 --
 -- TOC entry 3308 (class 0 OID 0)
 -- Dependencies: 206
--- Name: received_data_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: received_data_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.received_data_id_seq', 1, false);
@@ -3400,7 +3280,7 @@ SELECT pg_catalog.setval('attacksimulator.received_data_id_seq', 1, false);
 --
 -- TOC entry 3309 (class 0 OID 0)
 -- Dependencies: 208
--- Name: runner_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: runner_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.runner_id_seq', 7, true);
@@ -3409,7 +3289,7 @@ SELECT pg_catalog.setval('attacksimulator.runner_id_seq', 7, true);
 --
 -- TOC entry 3310 (class 0 OID 0)
 -- Dependencies: 210
--- Name: simulation_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.simulation_id_seq', 17, true);
@@ -3418,7 +3298,7 @@ SELECT pg_catalog.setval('attacksimulator.simulation_id_seq', 17, true);
 --
 -- TOC entry 3311 (class 0 OID 0)
 -- Dependencies: 212
--- Name: simulation_outcome_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_outcome_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.simulation_outcome_id_seq', 1, false);
@@ -3427,7 +3307,7 @@ SELECT pg_catalog.setval('attacksimulator.simulation_outcome_id_seq', 1, false);
 --
 -- TOC entry 3312 (class 0 OID 0)
 -- Dependencies: 225
--- Name: simulation_template_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.simulation_template_id_seq', 29, true);
@@ -3436,7 +3316,7 @@ SELECT pg_catalog.setval('attacksimulator.simulation_template_id_seq', 29, true)
 --
 -- TOC entry 3313 (class 0 OID 0)
 -- Dependencies: 214
--- Name: task_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: task_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.task_id_seq', 83, true);
@@ -3445,7 +3325,7 @@ SELECT pg_catalog.setval('attacksimulator.task_id_seq', 83, true);
 --
 -- TOC entry 3314 (class 0 OID 0)
 -- Dependencies: 228
--- Name: test_case_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: test_case_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.test_case_id_seq', 14, true);
@@ -3454,7 +3334,7 @@ SELECT pg_catalog.setval('attacksimulator.test_case_id_seq', 14, true);
 --
 -- TOC entry 3315 (class 0 OID 0)
 -- Dependencies: 219
--- Name: url_test_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: url_test_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.url_test_id_seq', 1, false);
@@ -3463,7 +3343,7 @@ SELECT pg_catalog.setval('attacksimulator.url_test_id_seq', 1, false);
 --
 -- TOC entry 3316 (class 0 OID 0)
 -- Dependencies: 216
--- Name: user_id_seq; Type: SEQUENCE SET; Schema: attacksimulator; Owner: towerstreet
+-- Name: user_id_seq; Type: SEQUENCE SET; Schema: attacksimulator
 --
 
 SELECT pg_catalog.setval('attacksimulator.user_id_seq', 2, true);
@@ -3472,7 +3352,7 @@ SELECT pg_catalog.setval('attacksimulator.user_id_seq', 2, true);
 --
 -- TOC entry 3317 (class 0 OID 0)
 -- Dependencies: 221
--- Name: assessment_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: towerstreet
+-- Name: assessment_type_id_seq; Type: SEQUENCE SET; Schema: public
 --
 
 SELECT pg_catalog.setval('public.assessment_type_id_seq', 6, true);
@@ -3481,7 +3361,7 @@ SELECT pg_catalog.setval('public.assessment_type_id_seq', 6, true);
 --
 -- TOC entry 3318 (class 0 OID 0)
 -- Dependencies: 237
--- Name: campaign_visitor_id_seq; Type: SEQUENCE SET; Schema: public; Owner: towerstreet
+-- Name: campaign_visitor_id_seq; Type: SEQUENCE SET; Schema: public
 --
 
 SELECT pg_catalog.setval('public.campaign_visitor_id_seq', 1, true);
@@ -3490,7 +3370,7 @@ SELECT pg_catalog.setval('public.campaign_visitor_id_seq', 1, true);
 --
 -- TOC entry 3319 (class 0 OID 0)
 -- Dependencies: 217
--- Name: company_id_seq; Type: SEQUENCE SET; Schema: public; Owner: towerstreet
+-- Name: company_id_seq; Type: SEQUENCE SET; Schema: public
 --
 
 SELECT pg_catalog.setval('public.company_id_seq', 2, true);
@@ -3499,7 +3379,7 @@ SELECT pg_catalog.setval('public.company_id_seq', 2, true);
 --
 -- TOC entry 3320 (class 0 OID 0)
 -- Dependencies: 223
--- Name: customer_assessment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: towerstreet
+-- Name: customer_assessment_id_seq; Type: SEQUENCE SET; Schema: public
 --
 
 SELECT pg_catalog.setval('public.customer_assessment_id_seq', 2, true);
@@ -3508,7 +3388,7 @@ SELECT pg_catalog.setval('public.customer_assessment_id_seq', 2, true);
 --
 -- TOC entry 3321 (class 0 OID 0)
 -- Dependencies: 230
--- Name: scoring_definition_id_seq; Type: SEQUENCE SET; Schema: scoring; Owner: towerstreet
+-- Name: scoring_definition_id_seq; Type: SEQUENCE SET; Schema: scoring
 --
 
 SELECT pg_catalog.setval('scoring.scoring_definition_id_seq', 20, true);
@@ -3517,7 +3397,7 @@ SELECT pg_catalog.setval('scoring.scoring_definition_id_seq', 20, true);
 --
 -- TOC entry 3322 (class 0 OID 0)
 -- Dependencies: 232
--- Name: scoring_outcome_id_seq; Type: SEQUENCE SET; Schema: scoring; Owner: towerstreet
+-- Name: scoring_outcome_id_seq; Type: SEQUENCE SET; Schema: scoring
 --
 
 SELECT pg_catalog.setval('scoring.scoring_outcome_id_seq', 1, false);
@@ -3526,7 +3406,7 @@ SELECT pg_catalog.setval('scoring.scoring_outcome_id_seq', 1, false);
 --
 -- TOC entry 3323 (class 0 OID 0)
 -- Dependencies: 234
--- Name: scoring_result_id_seq; Type: SEQUENCE SET; Schema: scoring; Owner: towerstreet
+-- Name: scoring_result_id_seq; Type: SEQUENCE SET; Schema: scoring
 --
 
 SELECT pg_catalog.setval('scoring.scoring_result_id_seq', 1, false);
@@ -3534,7 +3414,7 @@ SELECT pg_catalog.setval('scoring.scoring_result_id_seq', 1, false);
 
 --
 -- TOC entry 3014 (class 2606 OID 399248)
--- Name: client_request client_request_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: client_request client_request_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.client_request
@@ -3543,7 +3423,7 @@ ALTER TABLE ONLY attacksimulator.client_request
 
 --
 -- TOC entry 3016 (class 2606 OID 399250)
--- Name: network_segment network_segment_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: network_segment network_segment_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.network_segment
@@ -3552,7 +3432,7 @@ ALTER TABLE ONLY attacksimulator.network_segment
 
 --
 -- TOC entry 3018 (class 2606 OID 399252)
--- Name: outcome_task_result outcome_task_result_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: outcome_task_result outcome_task_result_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.outcome_task_result
@@ -3561,7 +3441,7 @@ ALTER TABLE ONLY attacksimulator.outcome_task_result
 
 --
 -- TOC entry 3020 (class 2606 OID 399254)
--- Name: received_data received_data_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: received_data received_data_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.received_data
@@ -3570,7 +3450,7 @@ ALTER TABLE ONLY attacksimulator.received_data
 
 --
 -- TOC entry 3022 (class 2606 OID 399256)
--- Name: runner runner_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: runner runner_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.runner
@@ -3579,7 +3459,7 @@ ALTER TABLE ONLY attacksimulator.runner
 
 --
 -- TOC entry 3024 (class 2606 OID 399258)
--- Name: runner runner_runner_name_key; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: runner runner_runner_name_key; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.runner
@@ -3588,7 +3468,7 @@ ALTER TABLE ONLY attacksimulator.runner
 
 --
 -- TOC entry 3030 (class 2606 OID 399262)
--- Name: simulation_outcome simulation_outcome_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_outcome simulation_outcome_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation_outcome
@@ -3597,7 +3477,7 @@ ALTER TABLE ONLY attacksimulator.simulation_outcome
 
 --
 -- TOC entry 3032 (class 2606 OID 399264)
--- Name: simulation_outcome simulation_outcome_token_key; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_outcome simulation_outcome_token_key; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation_outcome
@@ -3606,7 +3486,7 @@ ALTER TABLE ONLY attacksimulator.simulation_outcome
 
 --
 -- TOC entry 3026 (class 2606 OID 399266)
--- Name: simulation simulation_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation simulation_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation
@@ -3615,7 +3495,7 @@ ALTER TABLE ONLY attacksimulator.simulation
 
 --
 -- TOC entry 3058 (class 2606 OID 400182)
--- Name: simulation_template simulation_template_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template simulation_template_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation_template
@@ -3624,7 +3504,7 @@ ALTER TABLE ONLY attacksimulator.simulation_template
 
 --
 -- TOC entry 3060 (class 2606 OID 400184)
--- Name: simulation_template simulation_template_version_assessment_type_id_key; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template simulation_template_version_assessment_type_id_key; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation_template
@@ -3633,7 +3513,7 @@ ALTER TABLE ONLY attacksimulator.simulation_template
 
 --
 -- TOC entry 3028 (class 2606 OID 399268)
--- Name: simulation simulation_token_key; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation simulation_token_key; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation
@@ -3642,7 +3522,7 @@ ALTER TABLE ONLY attacksimulator.simulation
 
 --
 -- TOC entry 3034 (class 2606 OID 399270)
--- Name: task task_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: task task_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.task
@@ -3651,7 +3531,7 @@ ALTER TABLE ONLY attacksimulator.task
 
 --
 -- TOC entry 3036 (class 2606 OID 399272)
--- Name: task task_task_key_key; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: task task_task_key_key; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.task
@@ -3660,7 +3540,7 @@ ALTER TABLE ONLY attacksimulator.task
 
 --
 -- TOC entry 3062 (class 2606 OID 400224)
--- Name: test_case test_case_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: test_case test_case_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.test_case
@@ -3669,7 +3549,7 @@ ALTER TABLE ONLY attacksimulator.test_case
 
 --
 -- TOC entry 3064 (class 2606 OID 400226)
--- Name: test_case test_case_test_case_key_key; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: test_case test_case_test_case_key_key; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.test_case
@@ -3678,7 +3558,7 @@ ALTER TABLE ONLY attacksimulator.test_case
 
 --
 -- TOC entry 3050 (class 2606 OID 399986)
--- Name: url_test url_test_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: url_test url_test_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.url_test
@@ -3687,7 +3567,7 @@ ALTER TABLE ONLY attacksimulator.url_test
 
 --
 -- TOC entry 3038 (class 2606 OID 399274)
--- Name: user user_company_id_user_name_key; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: user user_company_id_user_name_key; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator."user"
@@ -3696,7 +3576,7 @@ ALTER TABLE ONLY attacksimulator."user"
 
 --
 -- TOC entry 3040 (class 2606 OID 399276)
--- Name: user user_pkey; Type: CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: user user_pkey; Type: CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator."user"
@@ -3705,7 +3585,7 @@ ALTER TABLE ONLY attacksimulator."user"
 
 --
 -- TOC entry 3052 (class 2606 OID 400106)
--- Name: assessment_type assessment_type_assessment_key_key; Type: CONSTRAINT; Schema: public; Owner: towerstreet
+-- Name: assessment_type assessment_type_assessment_key_key; Type: CONSTRAINT; Schema: public
 --
 
 ALTER TABLE ONLY public.assessment_type
@@ -3714,7 +3594,7 @@ ALTER TABLE ONLY public.assessment_type
 
 --
 -- TOC entry 3054 (class 2606 OID 400104)
--- Name: assessment_type assessment_type_pkey; Type: CONSTRAINT; Schema: public; Owner: towerstreet
+-- Name: assessment_type assessment_type_pkey; Type: CONSTRAINT; Schema: public
 --
 
 ALTER TABLE ONLY public.assessment_type
@@ -3723,7 +3603,7 @@ ALTER TABLE ONLY public.assessment_type
 
 --
 -- TOC entry 3074 (class 2606 OID 400844)
--- Name: campaign_visitor campaign_visitor_pkey; Type: CONSTRAINT; Schema: public; Owner: towerstreet
+-- Name: campaign_visitor campaign_visitor_pkey; Type: CONSTRAINT; Schema: public
 --
 
 ALTER TABLE ONLY public.campaign_visitor
@@ -3732,7 +3612,7 @@ ALTER TABLE ONLY public.campaign_visitor
 
 --
 -- TOC entry 3042 (class 2606 OID 399640)
--- Name: customer company_company_name_key; Type: CONSTRAINT; Schema: public; Owner: towerstreet
+-- Name: customer company_company_name_key; Type: CONSTRAINT; Schema: public
 --
 
 ALTER TABLE ONLY public.customer
@@ -3741,7 +3621,7 @@ ALTER TABLE ONLY public.customer
 
 --
 -- TOC entry 3044 (class 2606 OID 399638)
--- Name: customer company_pkey; Type: CONSTRAINT; Schema: public; Owner: towerstreet
+-- Name: customer company_pkey; Type: CONSTRAINT; Schema: public
 --
 
 ALTER TABLE ONLY public.customer
@@ -3750,7 +3630,7 @@ ALTER TABLE ONLY public.customer
 
 --
 -- TOC entry 3046 (class 2606 OID 399642)
--- Name: customer company_short_name_key; Type: CONSTRAINT; Schema: public; Owner: towerstreet
+-- Name: customer company_short_name_key; Type: CONSTRAINT; Schema: public
 --
 
 ALTER TABLE ONLY public.customer
@@ -3759,7 +3639,7 @@ ALTER TABLE ONLY public.customer
 
 --
 -- TOC entry 3056 (class 2606 OID 400114)
--- Name: customer_assessment customer_assessment_pkey; Type: CONSTRAINT; Schema: public; Owner: towerstreet
+-- Name: customer_assessment customer_assessment_pkey; Type: CONSTRAINT; Schema: public
 --
 
 ALTER TABLE ONLY public.customer_assessment
@@ -3768,7 +3648,7 @@ ALTER TABLE ONLY public.customer_assessment
 
 --
 -- TOC entry 3076 (class 2606 OID 400890)
--- Name: campaign_score_histogram campaign_score_histogram_pkey; Type: CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: campaign_score_histogram campaign_score_histogram_pkey; Type: CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.campaign_score_histogram
@@ -3777,7 +3657,7 @@ ALTER TABLE ONLY scoring.campaign_score_histogram
 
 --
 -- TOC entry 3066 (class 2606 OID 400354)
--- Name: scoring_definition scoring_definition_pkey; Type: CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: scoring_definition scoring_definition_pkey; Type: CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.scoring_definition
@@ -3786,7 +3666,7 @@ ALTER TABLE ONLY scoring.scoring_definition
 
 --
 -- TOC entry 3068 (class 2606 OID 400356)
--- Name: scoring_definition scoring_definition_scoring_key_key; Type: CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: scoring_definition scoring_definition_scoring_key_key; Type: CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.scoring_definition
@@ -3795,7 +3675,7 @@ ALTER TABLE ONLY scoring.scoring_definition
 
 --
 -- TOC entry 3070 (class 2606 OID 400364)
--- Name: scoring_outcome scoring_outcome_pkey; Type: CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: scoring_outcome scoring_outcome_pkey; Type: CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.scoring_outcome
@@ -3804,7 +3684,7 @@ ALTER TABLE ONLY scoring.scoring_outcome
 
 --
 -- TOC entry 3072 (class 2606 OID 400385)
--- Name: scoring_result scoring_result_pkey; Type: CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: scoring_result scoring_result_pkey; Type: CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.scoring_result
@@ -3813,7 +3693,7 @@ ALTER TABLE ONLY scoring.scoring_result
 
 --
 -- TOC entry 3047 (class 1259 OID 400866)
--- Name: as_url_test_created_at_idx; Type: INDEX; Schema: attacksimulator; Owner: towerstreet
+-- Name: as_url_test_created_at_idx; Type: INDEX; Schema: attacksimulator
 --
 
 CREATE INDEX as_url_test_created_at_idx ON attacksimulator.url_test USING btree (created_at);
@@ -3821,7 +3701,7 @@ CREATE INDEX as_url_test_created_at_idx ON attacksimulator.url_test USING btree 
 
 --
 -- TOC entry 3048 (class 1259 OID 400867)
--- Name: url_test_created_at_idx; Type: INDEX; Schema: attacksimulator; Owner: towerstreet
+-- Name: url_test_created_at_idx; Type: INDEX; Schema: attacksimulator
 --
 
 CREATE INDEX url_test_created_at_idx ON attacksimulator.url_test USING btree (task_id, created_at);
@@ -3829,7 +3709,7 @@ CREATE INDEX url_test_created_at_idx ON attacksimulator.url_test USING btree (ta
 
 --
 -- TOC entry 3079 (class 2606 OID 399357)
--- Name: client_request client_request_received_data_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: client_request client_request_received_data_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.client_request
@@ -3838,7 +3718,7 @@ ALTER TABLE ONLY attacksimulator.client_request
 
 --
 -- TOC entry 3078 (class 2606 OID 399362)
--- Name: client_request client_request_simulation_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: client_request client_request_simulation_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.client_request
@@ -3847,7 +3727,7 @@ ALTER TABLE ONLY attacksimulator.client_request
 
 --
 -- TOC entry 3077 (class 2606 OID 399367)
--- Name: client_request client_request_simulation_outcome_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: client_request client_request_simulation_outcome_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.client_request
@@ -3856,7 +3736,7 @@ ALTER TABLE ONLY attacksimulator.client_request
 
 --
 -- TOC entry 3081 (class 2606 OID 399372)
--- Name: network_segment network_segment_simulation_outcome_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: network_segment network_segment_simulation_outcome_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.network_segment
@@ -3865,7 +3745,7 @@ ALTER TABLE ONLY attacksimulator.network_segment
 
 --
 -- TOC entry 3080 (class 2606 OID 399377)
--- Name: network_segment network_segment_task_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: network_segment network_segment_task_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.network_segment
@@ -3874,7 +3754,7 @@ ALTER TABLE ONLY attacksimulator.network_segment
 
 --
 -- TOC entry 3084 (class 2606 OID 399382)
--- Name: outcome_task_result outcome_task_result_simulation_outcome_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: outcome_task_result outcome_task_result_simulation_outcome_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.outcome_task_result
@@ -3883,7 +3763,7 @@ ALTER TABLE ONLY attacksimulator.outcome_task_result
 
 --
 -- TOC entry 3083 (class 2606 OID 399387)
--- Name: outcome_task_result outcome_task_result_task_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: outcome_task_result outcome_task_result_task_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.outcome_task_result
@@ -3892,7 +3772,7 @@ ALTER TABLE ONLY attacksimulator.outcome_task_result
 
 --
 -- TOC entry 3082 (class 2606 OID 400414)
--- Name: outcome_task_result outcome_task_result_url_test_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: outcome_task_result outcome_task_result_url_test_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.outcome_task_result
@@ -3901,7 +3781,7 @@ ALTER TABLE ONLY attacksimulator.outcome_task_result
 
 --
 -- TOC entry 3086 (class 2606 OID 399392)
--- Name: received_data received_data_simulation_outcome_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: received_data received_data_simulation_outcome_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.received_data
@@ -3910,7 +3790,7 @@ ALTER TABLE ONLY attacksimulator.received_data
 
 --
 -- TOC entry 3085 (class 2606 OID 399397)
--- Name: received_data received_data_task_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: received_data received_data_task_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.received_data
@@ -3919,7 +3799,7 @@ ALTER TABLE ONLY attacksimulator.received_data
 
 --
 -- TOC entry 3088 (class 2606 OID 400151)
--- Name: simulation simulation_customer_assessment_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation simulation_customer_assessment_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation
@@ -3928,7 +3808,7 @@ ALTER TABLE ONLY attacksimulator.simulation
 
 --
 -- TOC entry 3090 (class 2606 OID 399412)
--- Name: simulation_outcome simulation_outcome_simulation_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_outcome simulation_outcome_simulation_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation_outcome
@@ -3937,7 +3817,7 @@ ALTER TABLE ONLY attacksimulator.simulation_outcome
 
 --
 -- TOC entry 3098 (class 2606 OID 400185)
--- Name: simulation_template simulation_template_assessment_type_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template simulation_template_assessment_type_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation_template
@@ -3946,7 +3826,7 @@ ALTER TABLE ONLY attacksimulator.simulation_template
 
 --
 -- TOC entry 3100 (class 2606 OID 400198)
--- Name: simulation_template_config simulation_template_config_task_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template_config simulation_template_config_task_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation_template_config
@@ -3955,7 +3835,7 @@ ALTER TABLE ONLY attacksimulator.simulation_template_config
 
 --
 -- TOC entry 3101 (class 2606 OID 400193)
--- Name: simulation_template_config simulation_template_config_template_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template_config simulation_template_config_template_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation_template_config
@@ -3964,7 +3844,7 @@ ALTER TABLE ONLY attacksimulator.simulation_template_config
 
 --
 -- TOC entry 3099 (class 2606 OID 400227)
--- Name: simulation_template_config simulation_template_config_test_case_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation_template_config simulation_template_config_test_case_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation_template_config
@@ -3973,7 +3853,7 @@ ALTER TABLE ONLY attacksimulator.simulation_template_config
 
 --
 -- TOC entry 3087 (class 2606 OID 400203)
--- Name: simulation simulation_template_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation simulation_template_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation
@@ -3982,7 +3862,7 @@ ALTER TABLE ONLY attacksimulator.simulation
 
 --
 -- TOC entry 3089 (class 2606 OID 399417)
--- Name: simulation simulation_user_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: simulation simulation_user_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.simulation
@@ -3991,7 +3871,7 @@ ALTER TABLE ONLY attacksimulator.simulation
 
 --
 -- TOC entry 3091 (class 2606 OID 399422)
--- Name: task task_runner_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: task task_runner_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.task
@@ -4000,7 +3880,7 @@ ALTER TABLE ONLY attacksimulator.task
 
 --
 -- TOC entry 3095 (class 2606 OID 399987)
--- Name: url_test url_test_client_request_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: url_test url_test_client_request_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.url_test
@@ -4009,7 +3889,7 @@ ALTER TABLE ONLY attacksimulator.url_test
 
 --
 -- TOC entry 3094 (class 2606 OID 399992)
--- Name: url_test url_test_task_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: url_test url_test_task_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator.url_test
@@ -4018,7 +3898,7 @@ ALTER TABLE ONLY attacksimulator.url_test
 
 --
 -- TOC entry 3092 (class 2606 OID 400861)
--- Name: user user_campaign_visitor_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: user user_campaign_visitor_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator."user"
@@ -4027,7 +3907,7 @@ ALTER TABLE ONLY attacksimulator."user"
 
 --
 -- TOC entry 3093 (class 2606 OID 400013)
--- Name: user user_company_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator; Owner: towerstreet
+-- Name: user user_company_id_fkey; Type: FK CONSTRAINT; Schema: attacksimulator
 --
 
 ALTER TABLE ONLY attacksimulator."user"
@@ -4036,7 +3916,7 @@ ALTER TABLE ONLY attacksimulator."user"
 
 --
 -- TOC entry 3109 (class 2606 OID 400845)
--- Name: campaign_visitor campaign_visitor_customer_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: towerstreet
+-- Name: campaign_visitor campaign_visitor_customer_id_fkey; Type: FK CONSTRAINT; Schema: public
 --
 
 ALTER TABLE ONLY public.campaign_visitor
@@ -4045,7 +3925,7 @@ ALTER TABLE ONLY public.campaign_visitor
 
 --
 -- TOC entry 3097 (class 2606 OID 400115)
--- Name: customer_assessment customer_assessment_assessment_type_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: towerstreet
+-- Name: customer_assessment customer_assessment_assessment_type_id_fkey; Type: FK CONSTRAINT; Schema: public
 --
 
 ALTER TABLE ONLY public.customer_assessment
@@ -4054,7 +3934,7 @@ ALTER TABLE ONLY public.customer_assessment
 
 --
 -- TOC entry 3096 (class 2606 OID 400120)
--- Name: customer_assessment customer_assessment_customer_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: towerstreet
+-- Name: customer_assessment customer_assessment_customer_id_fkey; Type: FK CONSTRAINT; Schema: public
 --
 
 ALTER TABLE ONLY public.customer_assessment
@@ -4063,7 +3943,7 @@ ALTER TABLE ONLY public.customer_assessment
 
 --
 -- TOC entry 3110 (class 2606 OID 400891)
--- Name: campaign_score_histogram campaign_score_histogram_customer_id_fkey; Type: FK CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: campaign_score_histogram campaign_score_histogram_customer_id_fkey; Type: FK CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.campaign_score_histogram
@@ -4072,7 +3952,7 @@ ALTER TABLE ONLY scoring.campaign_score_histogram
 
 --
 -- TOC entry 3103 (class 2606 OID 400365)
--- Name: scoring_outcome scoring_outcome_customer_assessment_id_fkey; Type: FK CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: scoring_outcome scoring_outcome_customer_assessment_id_fkey; Type: FK CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.scoring_outcome
@@ -4081,7 +3961,7 @@ ALTER TABLE ONLY scoring.scoring_outcome
 
 --
 -- TOC entry 3102 (class 2606 OID 400370)
--- Name: scoring_outcome scoring_outcome_simulation_outcome_id_fkey; Type: FK CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: scoring_outcome scoring_outcome_simulation_outcome_id_fkey; Type: FK CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.scoring_outcome
@@ -4090,7 +3970,7 @@ ALTER TABLE ONLY scoring.scoring_outcome
 
 --
 -- TOC entry 3105 (class 2606 OID 400386)
--- Name: scoring_result scoring_result_scoring_definition_id_fkey; Type: FK CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: scoring_result scoring_result_scoring_definition_id_fkey; Type: FK CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.scoring_result
@@ -4099,7 +3979,7 @@ ALTER TABLE ONLY scoring.scoring_result
 
 --
 -- TOC entry 3104 (class 2606 OID 400391)
--- Name: scoring_result scoring_result_scoring_outcome_id_fkey; Type: FK CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: scoring_result scoring_result_scoring_outcome_id_fkey; Type: FK CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.scoring_result
@@ -4108,7 +3988,7 @@ ALTER TABLE ONLY scoring.scoring_result
 
 --
 -- TOC entry 3108 (class 2606 OID 400399)
--- Name: simulation_scoring_config simulation_scoring_config_scoring_definition_id_fkey; Type: FK CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: simulation_scoring_config simulation_scoring_config_scoring_definition_id_fkey; Type: FK CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.simulation_scoring_config
@@ -4117,7 +3997,7 @@ ALTER TABLE ONLY scoring.simulation_scoring_config
 
 --
 -- TOC entry 3107 (class 2606 OID 400404)
--- Name: simulation_scoring_config simulation_scoring_config_simulation_template_id_fkey; Type: FK CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: simulation_scoring_config simulation_scoring_config_simulation_template_id_fkey; Type: FK CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.simulation_scoring_config
@@ -4126,7 +4006,7 @@ ALTER TABLE ONLY scoring.simulation_scoring_config
 
 --
 -- TOC entry 3106 (class 2606 OID 400409)
--- Name: simulation_scoring_config simulation_scoring_config_task_id_fkey; Type: FK CONSTRAINT; Schema: scoring; Owner: towerstreet
+-- Name: simulation_scoring_config simulation_scoring_config_task_id_fkey; Type: FK CONSTRAINT; Schema: scoring
 --
 
 ALTER TABLE ONLY scoring.simulation_scoring_config
