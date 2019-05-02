@@ -1,0 +1,10 @@
+logs
+target
+src/main/resources/secret.conf
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/RUNNING_PID
+/build-config

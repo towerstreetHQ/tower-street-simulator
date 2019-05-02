@@ -1,0 +1,48 @@
+.callout {
+    border: 0;
+    padding: rem-calc(20);
+    margin-bottom: rem-calc(30);
+    font-weight: 600;
+    @include breakpoint(medium) {
+        padding: rem-calc(15 30 15 35);
+    }
+
+    .headline {
+        font-size: rem-calc(16);
+        margin-bottom: rem-calc(5);
+        font-weight: 500;
+
+        img {
+            position: relative;
+            top: -2px;
+            left: -8px;
+        }
+    }
+
+    p {
+        line-height: rem-calc(20);
+        margin-bottom: 0;
+    }
+
+    .stat {
+        @extend .h1;
+        font-weight: 600;
+    }
+    /* color variants */
+    &.alert {
+        color: $alert-color;
+        background: linear-gradient(-90deg, rgba(255,140,0,0.10) 1%, rgba(255,140,0,0.00) 99%);
+    }
+    &.success{
+        color: $success-color;
+        background: linear-gradient(-90deg, rgba(56,222,119,0.10) 1%, rgba(56,222,119,0.00) 99%);
+    }
+}
+
+.block-callouts {
+    margin-bottom: rem-calc(40);
+
+    .callout {
+        margin-bottom: rem-calc(5);
+    }
+}

@@ -1,0 +1,68 @@
+/*
+ |--------------------------------------------------------------------------
+ | Mixins
+ |--------------------------------------------------------------------------
+ */
+
+// Vertical spacing
+$vertical-spacing-list: (
+    0,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    40,
+    50,
+    60,
+    65,
+    70,
+    80,
+    90,
+    100,
+    105,
+    110,
+    120
+);
+
+@each $value in $vertical-spacing-list {
+    .mt-#{nth($value, 1)} {
+        margin-top: nth($value, 1) + px;
+    }
+    .mb-#{nth($value, 1)} {
+        margin-bottom: nth($value, 1) + px;
+    }
+    .pt-#{nth($value, 1)} {
+        padding-top: nth($value, 1) + px;
+    }
+    .pb-#{nth($value, 1)} {
+        padding-bottom: nth($value, 1) + px;
+    }
+}
+
+// Horizontal spacing
+$horizontal-spacing-list: (
+    5,
+    10,
+    15,
+    20,
+    30,
+    40,
+    70
+);
+
+@each $value in $horizontal-spacing-list {
+    .ml-#{nth($value, 1)} {
+        margin-left: nth($value, 1) + px;
+    }
+    .mr-#{nth($value, 1)} {
+        margin-right: nth($value, 1) + px;
+    }
+    .pl-#{nth($value, 1)} {
+        padding-left: nth($value, 1) + px;
+    }
+    .pr-#{nth($value, 1)} {
+        padding-right: nth($value, 1) + px;
+    }
+}

@@ -1,0 +1,61 @@
+.test-progressbar {
+    position: relative;
+    text-align: center;
+
+    .stat {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: rem-calc(18);
+        color: #228CEA;
+
+        @include breakpoint(large) {
+            right: 15%;
+        }
+    }
+
+    strong {
+        font-size: rem-calc(28);
+        line-height: rem-calc(36);
+    }
+
+    .progressbar-bg, .progressbar {
+        width: 100%;
+        max-width: rem-calc(400);
+        margin: 0 auto;
+    }
+
+    .progressbar {
+        position: absolute;
+    }
+
+    .progress-line {
+        fill: none;
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: miter;
+        opacity: 0;
+        stroke-dashoffset: 1000;
+        stroke-dasharray: 1000;
+        animation: ekg 1.5s linear forwards infinite;
+    }
+}
+
+@keyframes ekg {
+    0% {
+      opacity: 1;
+      stroke-dashoffset: 965;
+    }
+    30% {
+      stroke-dashoffset: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+}

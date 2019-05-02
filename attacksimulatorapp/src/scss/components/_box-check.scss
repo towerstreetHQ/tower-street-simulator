@@ -1,0 +1,39 @@
+.box-check {
+    padding: rem-calc(20);
+    border-radius: $global-radius;
+    background-color: $dark;
+    border-radius: rem-calc(25);
+    @include breakpoint(medium) {
+        min-height: rem-calc(130);
+        margin-bottom: rem-calc(20);
+        padding: rem-calc(17 35 20 35);
+    }
+    @include breakpoint(medium down) {
+        margin-bottom: rem-calc(10);
+    }
+
+    .headline {
+        @extend .h4;
+        margin-bottom: rem-calc(10);
+
+        &:before {
+            content: '';
+            display: inline-block;
+            background-image: url("../img/icons/icon-check.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto;
+            width: 22px;
+            height: 16px;
+            margin-right: rem-calc(15);
+        }
+    }
+
+    p {
+        color: $medium-gray;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

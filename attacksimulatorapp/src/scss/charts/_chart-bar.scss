@@ -1,0 +1,50 @@
+.chart-bar {
+    .bars {
+        position: relative;
+        height: rem-calc(300);
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-top: rem-calc(60);
+        padding-bottom: rem-calc(40);
+        @include breakpoint(medium) {
+            height: rem-calc(380);
+            padding-bottom: rem-calc(50);
+        }
+
+        .bar {
+            width: rem-calc(40);
+            display: inline-block;
+            flex: 0 0 auto;
+            position: relative;
+            text-align: center;
+            @include breakpoint(medium) {
+                width: rem-calc(60);
+            }
+
+
+            .bar-label {
+                position: absolute;
+                bottom: -30px;
+                font-weight: 600;
+                left: rem-calc(-10);
+                right: rem-calc(-10);
+            }
+
+            .bar-value {
+                position: absolute;
+                left: rem-calc(-10);
+                right: rem-calc(-10);
+                top: rem-calc(-45);
+                font-size: rem-calc(26);
+                font-weight: 700;
+                @include breakpoint(medium) {
+                    font-size: rem-calc(46);
+                    top: rem-calc(-70);
+                }
+            }
+        }
+    }
+}

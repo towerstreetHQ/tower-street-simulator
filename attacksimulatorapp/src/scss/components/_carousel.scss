@@ -1,0 +1,127 @@
+.carousel {
+    outline: none;
+    overflow: hidden;
+    position: relative;
+
+    .carousel-cell {
+        width: 100%;
+    }
+}
+
+.carousel--quotes {
+    .carousel-cell {
+        margin-right: rem-calc(15);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+        border: 1px solid darken($light-gray, 10%);
+
+        &.is-selected {
+            opacity: 1;
+        }
+
+        .box-quote {
+            padding: rem-calc(10 20);
+            min-height: rem-calc(180);
+        }
+    }
+}
+/*
+ |--------------------------------------------------------------------------
+ | Carousel elements
+ |--------------------------------------------------------------------------
+ */
+.flickity-page-dots {
+    list-style: none;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: rem-calc(15);
+
+    li {
+        position: relative;
+        width: rem-calc(15);
+        height: rem-calc(15);
+        display: inline-block;
+        margin: rem-calc(0 5);
+        cursor: pointer;
+        padding: rem-calc(10 0);
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: rem-calc(20);
+            height: rem-calc(2);
+            left: 0;
+            background: $primary-color;
+            opacity: 0.3;
+        }
+
+        &.is-selected,
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+}
+/* no circle */
+.flickity-button {
+    background: transparent;
+    /* big previous & next buttons */
+    &.flickity-prev-next-button {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: 50%;
+        margin-top: rem-calc(-24);
+        z-index: 3;
+        cursor: pointer;
+    }
+
+    &:hover{
+        .flickity-button-icon{
+            fill: $secondary-color;
+        }
+    }
+
+    &.next {
+        right: rem-calc(-80);
+    }
+
+    &.previous {
+        left: rem-calc(-80);
+    }
+    /* icon color */
+    .flickity-button-icon {
+        fill: $white;
+        transition: fill 0.3s ease;
+    }
+
+    &:disabled {
+        opacity: 0.05;
+    }
+}
+
+.layout-light{
+    .flickity-button {
+        .flickity-button-icon {
+            fill: $black;
+        }
+    }
+}
+/*
+ |--------------------------------------------------------------------------
+ | FOUC prevention
+ |--------------------------------------------------------------------------
+ */
+.carousel {
+    opacity: 0;
+    transition: opacity 0.4s;
+
+    &.is-hidden {
+        display: none;
+    }
+
+    &.flickity-enabled {
+        opacity: 1;
+    }
+}

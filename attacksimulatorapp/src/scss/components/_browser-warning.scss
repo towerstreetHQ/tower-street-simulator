@@ -1,0 +1,56 @@
+.browser-warning {
+    width: 250px;
+    max-width: 100%;
+    min-width: fit-content;
+    background-color: rgba($alert-color, 0.8);
+    padding: rem-calc(10 10 0 15);
+    color: $white;
+    border-radius: 6px;
+    font-size: rem-calc(16);
+    position: relative;
+    @include breakpoint(medium down) {
+        margin-bottom: rem-calc(20);
+    }
+    @include breakpoint(small only) {
+        padding-bottom: rem-calc(10);
+    }
+
+    div {
+        padding-bottom: rem-calc(10);
+    }
+
+    .arrow_box {
+        position: relative;
+        background: #88b7d5;
+        border: 4px solid #c2e1f5;
+    }
+
+    &:before {
+        bottom: 100%;
+        left: 5%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+        border-bottom-color: rgba($alert-color, 0.8);
+        border-width: 10px;
+        margin-left: -10px;
+    }
+
+    .list-browsers {
+        font-size: rem-calc(16);
+        @extend .menu;
+
+        li {
+            margin-right: rem-calc(10);
+            margin-bottom: rem-calc(12);
+
+            img {
+                margin-right: rem-calc(4);
+            }
+        }
+    }
+}

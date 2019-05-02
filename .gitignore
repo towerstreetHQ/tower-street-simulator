@@ -1,0 +1,50 @@
+.DS_Store
+*.pyc
+__pycache__
+
+#node.js
+node_modules
+node
+dist
+bundle.js
+bundle.map
+MANIFEST
+
+
+# Covers InteliJ Idea IDE
+out/
+.idea/
+*.iml
+
+# Covers Jupyter notebook
+.ipynb_checkpoints/
+
+# Covers R files
+.RData
+.Rhistory
+
+# Temporary data files
+*.csv
+*.tsv
+*.dot
+
+# Covers snakemake files
+.snakemake
+
+#Python environment
+venv
+
+# Build directory
+target
+logs
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# Local vscode settings
+.vscode
+
+# Secret configs - should never be in git
+secret.conf

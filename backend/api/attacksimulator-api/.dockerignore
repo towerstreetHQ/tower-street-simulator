@@ -1,0 +1,9 @@
+.idea
+.gitignore
+build-config
+docker
+logs
+src
+target
+!target/scala-2.12/attacksimulator-api.jar
+!target/docker/attacksimulator-api

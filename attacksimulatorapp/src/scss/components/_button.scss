@@ -1,0 +1,173 @@
+.layout-light {
+    .button {
+        box-shadow: 0 15px 20px 0 rgba(0,0,0,0.1);
+
+        &:hover {
+            box-shadow: 0 20px 40px 0 rgba(0,0,0,0.2);
+        }
+    }
+}
+
+.button {
+    font-weight: 600;
+    font-size: rem-calc(20);
+    box-shadow: 0 15px 20px 0 rgba(0,0,0,0.37);
+    transition: box-shadow 0.3s ease, color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    @include breakpoint(small only) {
+        width: 100%;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px 0 rgba(0,0,0,0.47);
+    }
+
+    &.secondary {
+        color: $white;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &.outline {
+        background-color: transparent;
+        box-shadow: none;
+        border: 1px solid $gray;
+        color: $gray;
+        padding-left: rem-calc(90);
+
+        &:before {
+            content: '';
+            display: inline-block;
+            background-image: url("../img/icons/icon-check.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto;
+            width: rem-calc(64);
+            height: rem-calc(64);
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-right: 1px solid $gray;
+        }
+
+        &:disabled {
+            opacity: 1;
+
+            &:hover {
+                color: $gray;
+                background-color: transparent;
+            }
+        }
+    }
+
+    &.gray {
+        background-color: $light-gray;
+        color: $black;
+    }
+
+    &.external {
+        padding: rem-calc(15 20);
+        box-shadow: none;
+        border-radius: rem-calc(6);
+        border-bottom-right-radius: rem-calc(35);
+        padding-right: rem-calc(80);
+        background-image: url("../img/icons/icon-external.svg");
+        background-position: center right rem-calc(30);
+        background-repeat: no-repeat;
+        background-size: auto;
+        text-align: left;
+        @include breakpoint(small only) {
+            padding-top: rem-calc(12);
+            padding-bottom: rem-calc(12);
+            padding-left: rem-calc(15);
+        }
+
+        &:hover {
+            box-shadow: 0 15px 20px 0 rgba(0,0,0,0.02);
+        }
+    }
+
+    &.linkedin {
+        padding-left: rem-calc(90);
+        @include breakpoint(medium down) {
+            margin-bottom: rem-calc(40);
+        }
+
+        &:before {
+            content: '';
+            display: inline-block;
+            background-image: url("../img/icons/icon-linkedin.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto;
+            width: rem-calc(64);
+            height: rem-calc(64);
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-right: 1px solid darken($secondary-color, 20);
+        }
+
+        &:disabled {
+            color: $white;
+            &:hover{
+                color: $white;
+            }
+        }
+    }
+
+    &.quantification {
+        padding-left: rem-calc(90);
+
+        &:before {
+            content: '';
+            display: inline-block;
+            background-image: url("../img/icons/icon-dolar.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto;
+            width: rem-calc(50);
+            height: rem-calc(50);
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-right: 1px solid darken($primary-color, 20);
+        }
+    }
+
+    &:disabled:hover {
+        transform: none;
+    }
+
+    &.small {
+        font-size: rem-calc(20);
+        padding: rem-calc(12 30);
+    }
+}
+
+.menu {
+    &.expand-mobile {
+        @include breakpoint(small only) {
+            display: block;
+        }
+    }
+
+    .button {
+        margin-right: rem-calc(20);
+        margin-bottom: rem-calc(10);
+        @include breakpoint(medium) {
+            margin-bottom: rem-calc(20);
+        }
+    }
+}
+
+.hero {
+    .menu {
+        @include breakpoint(small only) {
+            display: block;
+        }
+    }
+}

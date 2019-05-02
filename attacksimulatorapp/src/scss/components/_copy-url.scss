@@ -1,0 +1,57 @@
+.copy-url {
+    background-color: $light-gray;
+    padding: rem-calc(8 15);
+    border-radius: 6px;
+    border: 1px solid #E9E9E9;
+    font-weight: 700;
+
+    @include breakpoint(medium) {
+        font-size: rem-calc(20);
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    @include breakpoint(medium down) {
+        font-size: rem-calc(16);
+    }
+
+    button,
+    input {
+        display: inline-block;
+        margin: 0;
+    }
+
+    input {
+        width: 66%;
+        background: none;
+        height: auto;
+
+        border: 0;
+        padding: 0;
+        background: none;
+        cursor: text;
+        &:hover,&:focus{
+            border: 0;
+            padding: 0;
+            background: none;
+            box-shadow: none;
+        }
+    }
+
+    button {
+        color: $secondary-color;
+        font-weight: 700;
+        user-select: none;
+        transition: color 0.3s ease;
+        cursor: pointer;
+        background: none;
+        height: auto;
+        width: auto;
+        border: 0;
+
+        &:hover {
+            color: darken($secondary-color,20);
+        }
+    }
+}

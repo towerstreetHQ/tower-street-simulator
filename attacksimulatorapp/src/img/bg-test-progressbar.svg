@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="399px" height="418px" viewBox="0 0 399 418" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="31.3180726%" x2="50%" y2="98.93106%" id="linearGradient-1">
+            <stop stop-color="#EDEDED" offset="0%"></stop>
+            <stop stop-color="#F9F9F9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="17.7470439%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#E3E3E3" offset="0%"></stop>
+            <stop stop-color="#F9F9F9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="31.184016%" id="linearGradient-3">
+            <stop stop-color="#F9F9F9" offset="0%"></stop>
+            <stop stop-color="#E3E3E3" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bg" transform="translate(0.000000, 0.900000)" fill-rule="nonzero">
+            <polygon id="Path-Copy-4" fill="#F9F9F9" points="399 417.1 1.58139217 417.1 -1.41753276e-12 1.1 399 1.1"></polygon>
+            <g id="Group-16-Copy-3" opacity="0.5" transform="translate(66.915545, 0.000000)">
+                <polygon id="Path" fill="url(#linearGradient-1)" points="265.82 416.1 -5.68434189e-14 416.1 -5.68434189e-14 242.72 66.44 176.4 66.52 65.7 132.9 -1.70530257e-13 199.36 65.5 265.82 131"></polygon>
+                <polygon id="Path" fill="url(#linearGradient-2)" points="132.92 242.72 66.46 176.4 66.46 416.1 132.92 416.1"></polygon>
+                <polygon id="Path" fill="url(#linearGradient-3)" points="265.82 416.1 199.36 416.1 199.36 65.5 265.82 131"></polygon>
+                <polygon id="Path" fill="#E3E3E3" points="199.38 65.5 132.92 131 132.92 0"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

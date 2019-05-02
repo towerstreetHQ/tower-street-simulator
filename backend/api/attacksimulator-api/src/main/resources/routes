@@ -1,0 +1,25 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+GET     /version                                                      io.towerstreet.attacksimulator.controllers.IndexController.version
+
+# Test simulation endpoints
+POST    /test/simulations/start-simulation                            io.towerstreet.attacksimulator.controllers.SimulationController.postStartSimulation(simulationToken: java.util.UUID)
+POST    /test/simulations/heartbeat                                   io.towerstreet.attacksimulator.controllers.SimulationController.postHeartbeat(outcomeToken: java.util.UUID)
+POST    /test/simulations/finish-simulation                           io.towerstreet.attacksimulator.controllers.SimulationController.postFinishSimulation(outcomeToken: java.util.UUID)
+POST    /test/simulations/test-result                                 io.towerstreet.attacksimulator.controllers.SimulationController.postTestResult(outcomeToken: java.util.UUID, testId: Int)
+
+# Test resources endpoints
+GET     /test/resources/files/:fileKey                                io.towerstreet.attacksimulator.controllers.TestResourcesController.fileResource(fileKey: String)
+GET     /test/resources/eicar/:fileKey                                io.towerstreet.attacksimulator.controllers.TestResourcesController.eicarResource(fileKey: String)
+POST    /test/sinks/files                                             io.towerstreet.attacksimulator.controllers.TestSinkController.postFileSink(name: String, outcomeToken: java.util.UUID, testId: Int)
+
+# Client info controller
+GET     /client-info/x-forwarded-for                                  io.towerstreet.attacksimulator.controllers.ClientInfoController.xForwardedFor()
+
+# Network test endpoints
+GET     /test/network/segments                                        io.towerstreet.attacksimulator.controllers.NetworkTestController.getClientSegments(outcomeToken: java.util.UUID)
+POST    /test/network/segments/discovered                             io.towerstreet.attacksimulator.controllers.NetworkTestController.postSegmentDiscovered(outcomeToken: java.util.UUID, testId: Int)
+

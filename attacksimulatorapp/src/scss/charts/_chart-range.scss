@@ -1,0 +1,271 @@
+.chart-range {
+    height: 80px;
+    margin-top: rem-calc(60);
+    margin-bottom: rem-calc(120);
+
+    .x-axis {
+        width: 100%;
+        position: relative;
+
+        &:after {
+            content: '';
+            height: rem-calc(10);
+            width: 100%;
+            z-index: 3;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            border-radius: 5px;
+            background: linear-gradient(-90deg, #FF0000 15%, #EC8A8A 54%, #EC8A8A 100%);
+        }
+    }
+
+    .x-axis-mark {
+        position: absolute;
+        left: 50%;
+        height: 20px;
+        width: 2px;
+        background-color: $black;
+        bottom: 0;
+        margin-bottom: -11px;
+    }
+
+    .x-axis-label {
+        font-weight: 700;
+        font-size: rem-calc(18);
+        @include breakpoint(medium) {
+            font-size: rem-calc(34);
+        }
+
+        &.left,
+        &.right {
+            top: rem-calc(-10);
+            margin-top: rem-calc(35);
+            font-weight: 600;
+            @include breakpoint(medium) {
+                top: 100%;
+            }
+        }
+
+        &.left {
+            position: absolute;
+            left: 0;
+        }
+
+        &.right {
+            position: absolute;
+            right: 0;
+
+            span {
+                text-align: right;
+            }
+        }
+
+        span {
+            color: $medium-gray;
+            display: block;
+            font-size: rem-calc(14);
+            text-transform: uppercase;
+            @include breakpoint(small only) {
+                margin-bottom: rem-calc(-6);
+            }
+        }
+    }
+
+    .points {
+        margin: 0 18%;
+        position: relative;
+    }
+
+    .point {
+        position: relative;
+        display: block;
+        z-index: 4;
+
+        &:before {
+            background-color: $black;
+            border-color: inherit;
+            content: '';
+            width: rem-calc(5);
+            height: rem-calc(60);
+            position: absolute;
+            display: block;
+            top: 50%;
+            margin-top: -25px;
+            margin-left: -2px;
+            z-index: 2;
+            border-radius: 4px;
+        }
+
+        .point-label {
+            position: absolute;
+            top: rem-calc(60);
+            left: 0;
+            font-size: rem-calc(28);
+            margin-top: rem-calc(10);
+            transform: translate(-50%);
+            font-weight: 700;
+            color: $white;
+            border-radius: 6px;
+            min-width: rem-calc(160);
+            text-align: center;
+            @include breakpoint(medium) {
+                font-size: rem-calc(35);
+                min-width: rem-calc(190);
+                top: rem-calc(45);
+            }
+
+            &:before {
+                bottom: 100%;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-color: rgba(136, 183, 213, 0);
+                border-bottom-color: #3B3B3B;
+                border-width: 10px;
+                margin-left: -10px;
+            }
+
+            .main {
+                background-color: #3B3B3B;
+                padding: rem-calc(2 20);
+                border-top-left-radius: rem-calc(6);
+                border-top-right-radius: rem-calc(6);
+            }
+
+            .sub {
+                background-color: $alert-color;
+                padding: rem-calc(8);
+                font-size: rem-calc(16);
+                border-bottom-left-radius: rem-calc(6);
+                border-bottom-right-radius: rem-calc(6);
+
+                img {
+                    margin-right: rem-calc(10);
+                    position: relative;
+                    top: -1px;
+                }
+            }
+        }
+    }
+
+    &.divided {
+        .x-axis {
+            &:before {
+                content: '';
+                width: 100%;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 5px;
+                height: 20px;
+                background-image: url("../img/bg-axis.svg");
+                background-repeat: repeat-x;
+                background-size: 233px;
+                z-index: 1;
+                @include breakpoint(small only) {
+                    background-size: 166px;
+                }
+            }
+        }
+    }
+
+    &.comparison {
+        margin-bottom: rem-calc(120);
+        @include breakpoint(medium) {
+            margin-bottom: rem-calc(180);
+        }
+
+        .x-axis {
+            &:after {
+                background-image: linear-gradient(90deg, #FF0000 0%, #FF8500 38%, #38DE77 85%);
+            }
+        }
+
+        .point {
+            .point-label {
+                transform: none;
+                @include breakpoint(medium down) {
+                    left: 0!important;
+                    width: 100%;
+                    margin-left: -50%;
+                    transform: none;
+                    top: rem-calc(40);
+                }
+
+                &:before {
+                    display: none;
+                }
+
+                .main,
+                .sub {
+                    color: $black;
+                    background-color: transparent;
+                    padding: 0;
+                }
+
+                .main {
+                    font-size: rem-calc(42);
+                    font-weight: 600;
+                    min-width: auto;
+                    @include breakpoint(medium) {
+                        font-size: rem-calc(52);
+                    }
+
+                    img {
+                        margin-right: rem-calc(10);
+                        position: relative;
+                        top: -5px;
+                        @include breakpoint(small only) {
+                            width: 25px;
+                            height: 28px;
+                        }
+                    }
+                }
+
+                .sub {
+                    font-weight: 400;
+                    font-size: rem-calc(14);
+                    @include breakpoint(medium) {
+                        font-size: rem-calc(20);
+                    }
+                }
+            }
+        }
+        @include breakpoint(large) {
+            .point-comparison {
+                position: absolute;
+                left: 0;
+                right: -28%;
+                top: 34px;
+                height: 1px;
+                background-color: lighten($medium-gray, 10);
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: -25px;
+                    height: rem-calc(25);
+                    width: 1px;
+                    background-color: lighten($medium-gray, 10);
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    height: rem-calc(15);
+                    width: 1px;
+                    background-color: lighten($medium-gray, 10);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+.box-quote {
+    font-size: rem-calc(20);
+    font-weight: 600;
+    padding: rem-calc(20);
+    line-height: rem-calc(26);
+    display: flex;
+    flex-flow: column;
+    border: 0;
+    margin-bottom: 0;
+    
+    @include breakpoint(medium) {
+        font-size: rem-calc(24);
+        padding: rem-calc(30);
+    }
+
+    h6 {
+        color: $medium-gray;
+        font-weight: 600;
+        margin-bottom: rem-calc(15);
+    }
+
+    .source {
+        margin-top: auto;
+        font-size: rem-calc(16);
+        font-weight: 600;
+    }
+
+    cite {
+        font-size: rem-calc(20);
+        color: $black;
+        font-style: normal;
+        font-weight: 600;
+        margin-top: auto;
+
+        &:before {
+            display: none;
+        }
+
+        ul {
+            @extend .menu;
+
+            li {
+                flex: 0 0 auto;
+
+                &:nth-child(1) {
+                    margin-right: rem-calc(20);
+                    margin-top: rem-calc(3);
+                    width: auto;
+                }
+
+                &:nth-child(2) {
+                    flex: 1;
+                }
+            }
+
+            div,
+            img {
+                text-transform: uppercase;
+                color: $primary-color;
+                font-size: rem-calc(14);
+                line-height: 1;
+                display: block;
+            }
+        }
+    }
+}
+
+.layout-light {
+    .box-quote {
+        border: 1px solid $light-gray;
+
+        .source {
+            color: $black;
+        }
+    }
+}

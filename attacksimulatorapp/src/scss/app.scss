@@ -1,0 +1,86 @@
+@charset 'utf-8';
+
+@import '~foundation-sites/scss/foundation';
+@import 'settings';
+// TODO implement motion ui
+// @import 'motion-ui';
+
+// Global styles
+@include foundation-global-styles;
+@include foundation-forms;
+@include foundation-typography;
+
+// Grids (choose one)
+@include foundation-xy-grid-classes;
+// @include foundation-grid;
+// @include foundation-flex-grid;
+
+// Generic components
+@include foundation-button;
+@include foundation-button-group;
+@include foundation-close-button;
+//@include foundation-label;
+//@include foundation-progress-bar;
+//@include foundation-slider;
+//@include foundation-switch;
+//@include foundation-table;
+// Basic components
+//@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-callout;
+@include foundation-card;
+//@include foundation-dropdown;
+//@include foundation-pagination;
+//@include foundation-tooltip;
+
+// Containers
+//@include foundation-accordion;
+//@include foundation-media-object;
+//@include foundation-orbit;
+//@include foundation-responsive-embed;
+//@include foundation-tabs;
+//@include foundation-thumbnail;
+// Menu-based containers
+@include foundation-menu;
+@include foundation-menu-icon;
+//@include foundation-accordion-menu;
+//@include foundation-drilldown-menu;
+//@include foundation-dropdown-menu;
+
+// Layout components
+@include foundation-off-canvas;
+@include foundation-reveal;
+@include foundation-sticky;
+@include foundation-title-bar;
+@include foundation-top-bar;
+
+// Helpers
+//@include foundation-float-classes;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
+// @include foundation-prototype-classes;
+
+// Motion UI
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
+
+@import 'main';
+@import 'components/top-bar';
+@import 'components/button';
+@import 'components/carousel';
+@import 'components/list';
+@import 'components/box-quote';
+@import 'components/box-check';
+@import 'components/box-share';
+@import 'components/callout';
+@import 'components/copy-url';
+@import 'components/divider';
+@import 'components/browser-warning';
+@import 'components/test-progressbar';
+
+@import 'charts/chart-range';
+@import 'charts/chart-bar';
+
+@import 'global/typography';
+@import 'global/helpers';
+@import 'global/mixins';

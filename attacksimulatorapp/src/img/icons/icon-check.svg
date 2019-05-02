@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="16px" viewBox="0 0 22 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>icon-check</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Attack-Simulator-Jakub-V5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Attack-Simulator_BLACK" transform="translate(-876.000000, -359.000000)" fill="#2DB25F">
+            <g id="Group" transform="translate(835.000000, 320.000000)">
+                <path d="M60.8950326,39 C57.254405,42.7309997 53.0237056,47.0414371 49.2819937,50.8729453 L42.9200841,45.3502755 L41,47.6562948 L48.402734,54.0894444 L49.4437434,55 L50.4153523,54.006646 C54.3610095,49.9636007 59.0499012,45.1875547 63,41.1403467 L60.8950326,39 Z" id="icon-check"></path>
+            </g>
+        </g>
+    </g>
+</svg>

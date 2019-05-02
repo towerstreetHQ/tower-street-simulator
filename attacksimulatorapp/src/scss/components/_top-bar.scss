@@ -1,0 +1,177 @@
+$top-bar-height: rem-calc(80);
+
+.layout-light {
+    .top-bar {
+        background-color: $black;
+    }
+}
+
+.top-bar {
+    height: rem-calc(60);
+    padding: rem-calc(20);
+    @include breakpoint(large) {
+        padding: rem-calc(0 50);
+    }
+    @include breakpoint(medium) {
+        height: $top-bar-height;
+    }
+
+    .top-bar-left,
+    .top-bar-right {
+        flex: 0 0 auto;
+    }
+
+    .top-bar-left {
+        @include breakpoint(small only) {
+            position: relative;
+            top: -6px;
+        }
+    }
+
+    .top-bar-right {
+        /*
+        @include breakpoint(xlarge) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }*/
+    }
+
+    .menu {
+        li {
+            a:not(.button) {
+                padding-left: rem-calc(20);
+                padding-right: rem-calc(20);
+                color: $white;
+                transition: color 0.2s ease;
+                font-weight: 600;
+                @include breakpoint(large only) {
+                    padding-left: rem-calc(10);
+                    padding-right: rem-calc(10);
+                    font-size: rem-calc(14);
+                }
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+
+            &.active {
+                a {
+                    color: $primary-color;
+                    background: transparent;
+                }
+            }
+            .button{
+                padding-top: rem-calc(14);
+                padding-bottom: rem-calc(14);
+                margin: 0;
+                &.quantification{
+                    padding: rem-calc(14 14 14 65)
+                }
+            }
+        }
+    }
+
+    .grid-container {
+        width: 100%;
+    }
+}
+
+.top-bar__logo {
+    @include breakpoint(small only) {
+        width: 116px;
+        height: 20px;
+    }
+}
+
+.show-for-scanner {
+    display: none;
+}
+
+.layout-light {
+    .show-for-scanner {
+        display: inline-block;
+        margin-left: rem-calc(20);
+        position: relative;
+        bottom: -3px;
+        @include breakpoint(small only) {
+            max-width: 140px;
+        }
+    }
+}
+/*
+ |--------------------------------------------------------------------------
+ | Off canvas
+ |--------------------------------------------------------------------------
+ */
+.off-canvas {
+    color: $white;
+    padding: rem-calc(60 20 30 20);
+    font-size: rem-calc(16);
+
+    .menu:not(.menu-horizontal) {
+        display: block;
+        margin-bottom: rem-calc(20);
+        margin-top: rem-calc(20);
+
+        li {
+            display: block; //border-bottom: 1px solid rgba($color: $white, $alpha: .1)
+            margin-bottom: 0;
+
+            a:not(.button),
+            button {
+                outline: none;
+                padding: rem-calc(20 0);
+                font-size: rem-calc(18);
+                color: $white;
+                text-align: center;
+                width: 100%;
+
+                &:focus,
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            &.active {
+                a:not(.button),
+                button {
+                    color: $primary-color;
+                    background: transparent;
+                }
+            }
+        }
+
+        .button {
+            width: 100%;
+            margin: rem-calc(20 0);
+            padding: rem-calc(15);
+            &:before{
+                display: none;
+            }
+        }
+    }
+
+    .close-button {
+        right: 20px;
+        top: 10px;
+        font-size: 3em;
+        color: $white;
+        opacity: 0.5;
+    }
+}
+/*
+ |--------------------------------------------------------------------------
+ | Other
+ |--------------------------------------------------------------------------
+ */
+.hamburger {
+    @include hamburger($color: $primary-color, $color-hover: $white, $height: 12px);
+    position: relative;
+    top: -1px;
+    @include breakpoint(small only) {
+        position: relative;
+        top: -5px;
+    }
+}

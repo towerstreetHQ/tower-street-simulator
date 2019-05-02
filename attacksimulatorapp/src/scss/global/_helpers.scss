@@ -1,0 +1,5 @@
+.offset-small {
+    @include breakpoint(medium) {
+        padding-left: rem-calc(30);
+    }
+}

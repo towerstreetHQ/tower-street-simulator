@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# By default allow anything else
+iptables -P INPUT ACCEPT
+
+# Measures maxtimeout
+iptables -A INPUT -p tcp -s 0/0 --dport 8081 -j DROP
+
+# Measures resettimeout
+iptables -A INPUT -p tcp -s 0/0 --dport 8082 -j REJECT --reject-with tcp-reset
+
+exec syslogd -n -O -
